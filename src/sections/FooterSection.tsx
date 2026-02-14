@@ -94,8 +94,24 @@ export function FooterSection() {
             </div>
           </div>
 
-          {/* Copyright */}
+          {/* Expert Contribution Call */}
           <div className="mt-8 pt-8 border-t border-white/5 text-center">
+            <div className="bg-[#1F2937]/30 border border-[#EF4444]/20 rounded-lg p-6 mb-6 max-w-2xl mx-auto">
+              <p className="text-[#F9FAFB] font-medium mb-2">
+                🔬 Are you an expert in ecology, AI, or environmental science?
+              </p>
+              <p className="text-sm text-[#9CA3AF]">
+                Help us expand this platform with more data, research findings, or corrections. 
+                Your expertise can make a difference in raising awareness about these critical issues.
+              </p>
+              <p className="text-xs text-[#EF4444] mt-3">
+                Contact us to contribute evidence-based insights and help build a more comprehensive resource.
+              </p>
+            </div>
+          </div>
+
+          {/* Copyright */}
+          <div className="text-center">
             <p className="text-xs text-[#9CA3AF]">
               © 2025 AI Extinction Accelerator Framework. Data sourced from IPBES, IUCN, WWF, FAO, and peer-reviewed research.
             </p>
