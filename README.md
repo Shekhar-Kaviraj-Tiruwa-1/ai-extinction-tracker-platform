@@ -1,69 +1,49 @@
 # AI Extinction Tracker Platform
 
-A web application for tracking and understanding ecological extinction risks caused by AI and modern industrial practices.
-
-## What This Is
-
-This is a single-page React website that presents information about:
-- Evidence of ecological extinction
-- AI mechanisms contributing to environmental damage  
-- Risk assessment tools
-- Environmental impact data
-- Action frameworks for addressing these issues
-
-## Live Demo
-
-The website is deployed and available at: [Your Netlify URL]
-
-## How to Run Locally
-
-1. **Install dependencies:**
-   ```bash
-   npm install
-   ```
-
-2. **Start development server:**
-   ```bash
-   npm run dev
-   ```
-   
-3. **Open in browser:** Go to `http://localhost:5173`
-
-## How to Deploy
-
-1. **Build the project:**
-   ```bash
-   npm run build
-   ```
-
-2. **Deploy:** Upload the contents of the `dist/` folder to any web hosting service (Netlify, Vercel, etc.)
-
-## Tech Stack
-
-- **React** - User interface
-- **TypeScript** - Type safety
-- **Tailwind CSS** - Styling
-- **Vite** - Build tool and development server
-
-## Project Structure
-
-```
-src/
-├── components/     # Reusable UI components
-├── sections/       # Main page sections
-├── lib/           # Utility functions
-└── App.tsx        # Main application
-```
-
-## Features
-
-- Responsive design that works on all devices
-- Dark theme with modern UI
-- Smooth scrolling navigation
-- Interactive charts and visualizations
-- Evidence library with real data
-- Risk assessment tools
+A research-driven web platform exploring how AI-enabled industrial efficiency may accelerate biodiversity loss and ecological instability.
 
 ---
 
-Built with modern web technologies for fast performance and easy maintenance.
+## Project Overview
+
+AI Extinction Tracker is a single-page React application that maps a structured causal pathway:
+
+**AI Automation → Industrial Efficiency → Animal Agriculture Expansion → Habitat Loss → Accelerated Extinction Risk → Ecosystem Imbalance**
+
+This project does not claim that AI is the root cause of extinction. Instead, it examines how AI functions as an efficiency multiplier within economic systems that already drive land conversion, climate forcing, and biodiversity decline.
+
+The platform aims to:
+
+- Present credible, cited biodiversity data  
+- Clarify extinction vs population decline metrics  
+- Analyze AI’s role in scaling industrial throughput  
+- Highlight ecosystem-level consequences  
+- Provide structured action pathways grounded in evidence  
+
+---
+
+## Core Components
+
+### Extinction Data Section
+Aggregated statistics from major biodiversity reports (IPBES, WWF, IUCN, FAO).
+
+### AI & Industrial Mechanism Analysis
+Examination of precision livestock farming, supply-chain optimization, and rebound effects.
+
+### Ecosystem Impact Profiles
+Case studies of vulnerable or extinct species and their ecological roles.
+
+### Risk Framing & Governance Lens
+Scenario-based analysis of how policy constraints can cap expansion effects.
+
+
+##Link
+https://ai-extinction-tracker-yqfm.vercel.app/
+## Tech Stack
+
+- React  
+- TypeScript  
+- Tailwind CSS  
+- Vite  
+
+
