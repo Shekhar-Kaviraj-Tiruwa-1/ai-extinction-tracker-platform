@@ -196,16 +196,34 @@ export function ExtinctionRisk() {
           </div>
 
           {/* Risk Indicators */}
-          <div className="mt-16 grid grid-cols-3 gap-4">
-            {currentScenario.milestones.map((milestone) => (
-              <div key={milestone.year} className="text-center">
+          <div className="mt-12 grid grid-cols-1 sm:grid-cols-3 gap-4">
+            {currentScenario.milestones.map((milestone, index) => (
+              <div
+                key={milestone.year}
+                className="rounded-lg p-4 text-center"
+                style={{ background: `${currentScenario.color}10`, border: `1px solid ${currentScenario.color}30` }}
+              >
                 <div
-                  className="text-3xl font-bold font-mono"
+                  className="inline-block text-xs font-mono font-bold px-2 py-0.5 rounded-full mb-3"
+                  style={{ background: `${currentScenario.color}20`, color: currentScenario.color }}
+                >
+                  {milestone.year}
+                </div>
+                <div
+                  className="text-base font-bold mb-1"
                   style={{ color: currentScenario.color }}
                 >
-                  {milestone.label.split(' ')[0]}
+                  {milestone.label}
                 </div>
-                <div className="text-xs text-[#9CA3AF] mt-1">{milestone.year}</div>
+                <p className="text-sm text-[#9CA3AF]">{milestone.detail}</p>
+                {index < currentScenario.milestones.length - 1 && (
+                  <div
+                    className="mt-3 text-xs font-mono"
+                    style={{ color: `${currentScenario.color}80` }}
+                  >
+                    ↓ if unchecked
+                  </div>
+                )}
               </div>
             ))}
           </div>

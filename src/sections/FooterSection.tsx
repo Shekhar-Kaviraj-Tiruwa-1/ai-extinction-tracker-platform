@@ -1,124 +1,92 @@
-import { useState } from 'react';
-import { Activity, Send, Github, Twitter, Mail } from 'lucide-react';
+import { Link } from 'react-router-dom';
+import { Activity, Github, Twitter, Mail } from 'lucide-react';
 
 export function FooterSection() {
-  const [email, setEmail] = useState('');
-  const [isSubmitted, setIsSubmitted] = useState(false);
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    if (email) {
-      setIsSubmitted(true);
-      setTimeout(() => {
-        setEmail('');
-        setIsSubmitted(false);
-      }, 3000);
-    }
-  };
-
   return (
     <footer className="relative w-full bg-[#0A0F1A] border-t border-white/5">
-      {/* CTA Section */}
-      <div className="section-padding pb-12">
-        <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-3xl lg:text-4xl font-bold text-[#F9FAFB] mb-4">
-            Stay Informed
-          </h2>
-          <p className="text-lg text-[#9CA3AF] mb-8">
-            Get updates on AI, agriculture, and extinction research. No spam—just evidence-based analysis.
-          </p>
-
-          {/* Email Form */}
-          <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
-            <input
-              type="email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              placeholder="Enter your email"
-              className="flex-1 px-4 py-3 bg-white/5 border border-white/10 rounded-lg text-[#F9FAFB] placeholder:text-[#9CA3AF]/50 focus:outline-none focus:border-[#EF4444]/50 transition-colors"
-              required
-            />
-            <button
-              type="submit"
-              disabled={isSubmitted}
-              className="px-6 py-3 bg-[#EF4444] text-white font-medium rounded-lg hover:bg-[#EF4444]/90 transition-colors disabled:opacity-70 flex items-center justify-center gap-2"
-            >
-              {isSubmitted ? (
-                <span>Subscribed!</span>
-              ) : (
-                <>
-                  <span>Subscribe</span>
-                  <Send className="w-4 h-4" />
-                </>
-              )}
-            </button>
-          </form>
-
-          <p className="mt-4 text-xs text-[#9CA3AF]/60">
-            By subscribing, you agree to receive research updates. Unsubscribe at any time.
-          </p>
-        </div>
-      </div>
-
-      {/* Footer Links */}
-      <div className="border-t border-white/5 py-8">
-        <div className="max-w-7xl mx-auto px-6 lg:px-12">
-          <div className="flex flex-col lg:flex-row items-center justify-between gap-6">
-            {/* Logo */}
+      <div className="max-w-7xl mx-auto px-6 lg:px-12 py-10">
+        <div className="flex flex-col lg:flex-row items-start justify-between gap-8">
+          {/* Logo + tagline */}
+          <div className="flex flex-col gap-3 max-w-xs">
             <div className="flex items-center gap-2">
               <div className="w-8 h-8 rounded-full border-2 border-[#EF4444]/60 flex items-center justify-center">
                 <Activity className="w-4 h-4 text-[#EF4444]" />
               </div>
-              <span className="font-bold text-[#F9FAFB]">AI Extinction Accelerator</span>
+              <span className="font-bold text-[#F9FAFB]">Extinction Clock</span>
             </div>
+            <p className="text-xs text-[#9CA3AF] leading-relaxed">
+              Tracking the connection between AI, industrial agriculture, and biodiversity loss.
+              Data sourced from IPBES, IUCN, WWF, and FAO.
+            </p>
+            <p className="text-xs text-[#9CA3AF]/60">
+              This site traces a plausible causal chain — not a direct causal proof.{' '}
+              <Link to="/methodology" className="text-[#3B82F6] hover:underline">
+                Read the methodology.
+              </Link>
+            </p>
+          </div>
 
-            {/* Links */}
-            <div className="flex items-center gap-6 text-sm text-[#9CA3AF]">
-              <a href="#hero" className="hover:text-[#F9FAFB] transition-colors">Pathway</a>
-              <a href="#evidence" className="hover:text-[#F9FAFB] transition-colors">Evidence</a>
-              <a href="#mechanisms" className="hover:text-[#F9FAFB] transition-colors">AI Impact</a>
-              <a href="#action" className="hover:text-[#F9FAFB] transition-colors">Action</a>
-            </div>
+          {/* Nav links */}
+          <div className="grid grid-cols-2 sm:grid-cols-3 gap-x-12 gap-y-2 text-sm text-[#9CA3AF]">
+            {[
+              { path: '/', label: 'Home' },
+              { path: '/evidence', label: 'Evidence' },
+              { path: '/ai-impact', label: 'AI Impact' },
+              { path: '/species', label: 'Species' },
+              { path: '/risk', label: 'Risk & Scenarios' },
+              { path: '/action', label: 'Take Action' },
+              { path: '/methodology', label: 'Methodology' },
+              { path: '/connect', label: 'Connect' },
+              { path: '/suggest', label: 'Suggest' },
+            ].map((item) => (
+              <Link
+                key={item.path}
+                to={item.path}
+                className="hover:text-[#F9FAFB] transition-colors"
+              >
+                {item.label}
+              </Link>
+            ))}
+          </div>
 
-            {/* Social */}
+          {/* Social */}
+          <div className="flex flex-col gap-3">
+            <p className="text-xs font-medium text-[#9CA3AF] uppercase tracking-wider">Follow</p>
             <div className="flex items-center gap-4">
-              <a href="#" className="text-[#9CA3AF] hover:text-[#F9FAFB] transition-colors">
+              <a
+                href="https://x.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-[#9CA3AF] hover:text-[#F9FAFB] transition-colors"
+                aria-label="Twitter / X"
+              >
                 <Twitter className="w-5 h-5" />
               </a>
-              <a href="#" className="text-[#9CA3AF] hover:text-[#F9FAFB] transition-colors">
+              <a
+                href="https://github.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-[#9CA3AF] hover:text-[#F9FAFB] transition-colors"
+                aria-label="GitHub"
+              >
                 <Github className="w-5 h-5" />
               </a>
-              <a href="#" className="text-[#9CA3AF] hover:text-[#F9FAFB] transition-colors">
+              <a
+                href="mailto:contact@extinctionClock.org"
+                className="text-[#9CA3AF] hover:text-[#F9FAFB] transition-colors"
+                aria-label="Email"
+              >
                 <Mail className="w-5 h-5" />
               </a>
             </div>
           </div>
+        </div>
 
-          {/* Expert Contribution Call */}
-          <div className="mt-8 pt-8 border-t border-white/5 text-center">
-            <div className="bg-[#1F2937]/30 border border-[#EF4444]/20 rounded-lg p-6 mb-6 max-w-2xl mx-auto">
-              <p className="text-[#F9FAFB] font-medium mb-2">
-                🔬 Are you an expert in ecology, AI, or environmental science?
-              </p>
-              <p className="text-sm text-[#9CA3AF]">
-                Help us expand this platform with more data, research findings, or corrections. 
-                Your expertise can make a difference in raising awareness about these critical issues.
-              </p>
-              <p className="text-xs text-[#EF4444] mt-3">
-                Contact us to contribute evidence-based insights and help build a more comprehensive resource.
-              </p>
-            </div>
-          </div>
-
-          {/* Copyright */}
-          <div className="text-center">
-            <p className="text-xs text-[#9CA3AF]">
-              © 2025 AI Extinction Accelerator Framework. Data sourced from IPBES, IUCN, WWF, FAO, and peer-reviewed research.
-            </p>
-            <p className="text-xs text-[#9CA3AF]/60 mt-2">
-              This framework traces a plausible causal chain rather than claiming AI is the only driver of biodiversity loss.
-            </p>
-          </div>
+        {/* Copyright */}
+        <div className="mt-10 pt-6 border-t border-white/5 text-center">
+          <p className="text-xs text-[#9CA3AF]">
+            © 2026 Extinction Clock. Data sourced from IPBES, IUCN, WWF, FAO, and peer-reviewed research.
+          </p>
         </div>
       </div>
     </footer>

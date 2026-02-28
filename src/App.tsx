@@ -1,85 +1,55 @@
-import { useEffect, useState } from 'react';
+import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
+import { useEffect } from 'react';
 import { Navigation } from './components/Navigation';
-import { HeroSection } from './sections/HeroSection';
-import { EvidenceLibrary } from './sections/EvidenceLibrary';
-import { AIMechanisms } from './sections/AIMechanisms';
-import { ExtinctionRisk } from './sections/ExtinctionRisk';
-import { EcologicalImpact } from './sections/EcologicalImpact';
-import { PressureDial } from './sections/PressureDial';
-import { ActionFramework } from './sections/ActionFramework';
 import { FooterSection } from './sections/FooterSection';
 
-function App() {
-  const [currentSection, setCurrentSection] = useState('hero');
+import { HomePage } from './pages/HomePage';
+import { EvidencePage } from './pages/EvidencePage';
+import { AIImpactPage } from './pages/AIImpactPage';
+import { SpeciesPage } from './pages/SpeciesPage';
+import { RiskPage } from './pages/RiskPage';
+import { ActionPage } from './pages/ActionPage';
+import { MethodologyPage } from './pages/MethodologyPage';
+import { ConnectPage } from './pages/ConnectPage';
+import { SuggestPage } from './pages/SuggestPage';
 
+function ScrollToTop() {
+  const { pathname } = useLocation();
   useEffect(() => {
-    const handleScroll = () => {
-      const sections = ['hero', 'evidence', 'mechanisms', 'risk', 'impact', 'dial', 'action', 'footer'];
-      const scrollPosition = window.scrollY + window.innerHeight / 3;
-      
-      for (const sectionId of sections) {
-        const element = document.getElementById(sectionId);
-        if (element) {
-          const { offsetTop, offsetHeight } = element;
-          if (scrollPosition >= offsetTop && scrollPosition < offsetTop + offsetHeight) {
-            setCurrentSection(sectionId);
-            break;
-          }
-        }
-      }
-    };
+    window.scrollTo(0, 0);
+  }, [pathname]);
+  return null;
+}
 
-    window.addEventListener('scroll', handleScroll, { passive: true });
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-
-  const scrollToSection = (sectionId: string) => {
-    const element = document.getElementById(sectionId);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
-
+function AppLayout() {
   return (
     <div className="relative min-h-screen bg-[#0A0F1A]">
-      {/* Navigation */}
-      <Navigation currentSection={currentSection} onNavigate={scrollToSection} />
-      
-      {/* Main Content */}
-      <main className="relative">
-        <section id="hero">
-          <HeroSection />
-        </section>
-        
-        <section id="evidence">
-          <EvidenceLibrary />
-        </section>
-        
-        <section id="mechanisms">
-          <AIMechanisms />
-        </section>
-        
-        <section id="risk">
-          <ExtinctionRisk />
-        </section>
-        
-        <section id="impact">
-          <EcologicalImpact />
-        </section>
-        
-        <section id="dial">
-          <PressureDial />
-        </section>
-        
-        <section id="action">
-          <ActionFramework />
-        </section>
-        
-        <section id="footer">
-          <FooterSection />
-        </section>
+      <Navigation />
+      <ScrollToTop />
+      <main>
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/evidence" element={<EvidencePage />} />
+          <Route path="/ai-impact" element={<AIImpactPage />} />
+          <Route path="/species" element={<SpeciesPage />} />
+          <Route path="/risk" element={<RiskPage />} />
+          <Route path="/action" element={<ActionPage />} />
+          <Route path="/methodology" element={<MethodologyPage />} />
+          <Route path="/connect" element={<ConnectPage />} />
+          <Route path="/suggest" element={<SuggestPage />} />
+          <Route path="*" element={<HomePage />} />
+        </Routes>
       </main>
+      <FooterSection />
     </div>
+  );
+}
+
+function App() {
+  return (
+    <BrowserRouter>
+      <AppLayout />
+    </BrowserRouter>
   );
 }
 
