@@ -1,52 +1,62 @@
-import { Github, Mail, Twitter, Microscope, FileText, Globe } from 'lucide-react';
+import { useState } from 'react';
+import { Send, CheckCircle, Microscope, FileText, Globe, Users } from 'lucide-react';
 
-const socialLinks = [
-  {
-    label: 'GitHub',
-    description: 'View the source code, report issues, or contribute',
-    icon: Github,
-    href: 'https://github.com',
-    color: '#F9FAFB',
-  },
-  {
-    label: 'Twitter / X',
-    description: 'Follow for updates on new data and research',
-    icon: Twitter,
-    href: 'https://x.com',
-    color: '#1D9BF0',
-  },
-  {
-    label: 'Email',
-    description: 'For media enquiries, collaborations, or expert contributions',
-    icon: Mail,
-    href: 'mailto:shekhar.study99@gmail.com',
-    color: '#EF4444',
-  },
+type ConnectionType = 'scientist' | 'journalist' | 'policy' | 'educator' | 'general';
+
+const connectionTypes: { value: ConnectionType; label: string }[] = [
+  { value: 'scientist', label: 'Ecology / Conservation scientist — review data or contribute findings' },
+  { value: 'journalist', label: 'Journalist — use data in reporting or request source documentation' },
+  { value: 'policy', label: 'Policy researcher — contribute governance analysis' },
+  { value: 'educator', label: 'Educator — use this resource in teaching' },
+  { value: 'general', label: 'General — other collaboration or question' },
 ];
 
-const contributionTypes = [
-  {
-    icon: Microscope,
-    title: 'Ecology & Conservation Scientists',
-    description: 'Help us review species data, challenge our extinction linkage reasoning, or contribute unpublished findings that bear on the AI–extinction connection.',
-  },
-  {
-    icon: FileText,
-    title: 'Environmental Journalists',
-    description: 'Use this data freely in your reporting. We can provide source documentation, methodological notes, or expert contacts for any statistic on this site.',
-  },
-  {
-    icon: Globe,
-    title: 'Policy Researchers',
-    description: 'Contribute analysis of governance mechanisms — subsidy reform, supply chain regulation, AI governance frameworks — that we could add to the Action page.',
-  },
+const whoWeWantToHear = [
+  { icon: Microscope, label: 'Scientists', example: 'e.g. "I can verify your extinction rate figures"' },
+  { icon: FileText, label: 'Journalists', example: 'e.g. "I\'m writing about AI and biodiversity"' },
+  { icon: Globe, label: 'Policy researchers', example: 'e.g. "I study AI governance in agriculture"' },
+  { icon: Users, label: 'Educators', example: 'e.g. "I want to use this in my course"' },
 ];
 
 export function ConnectPage() {
+  const [form, setForm] = useState({
+    name: '',
+    role: '',
+    type: '' as ConnectionType | '',
+    message: '',
+  });
+  const [submitted, setSubmitted] = useState(false);
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    setSubmitted(true);
+  };
+
+  if (submitted) {
+    return (
+      <div className="min-h-screen bg-[#0A0F1A] flex items-center justify-center section-padding">
+        <div className="card-dark p-10 max-w-md w-full text-center">
+          <CheckCircle className="w-16 h-16 text-[#8B5CF6] mx-auto mb-4" />
+          <h2 className="text-2xl font-bold text-[#F9FAFB] mb-2">Message received</h2>
+          <p className="text-[#9CA3AF] mb-6">
+            Thank you for reaching out. We review all messages and will follow up
+            where we can.
+          </p>
+          <button
+            onClick={() => { setSubmitted(false); setForm({ name: '', role: '', type: '', message: '' }); }}
+            className="px-6 py-2 text-sm font-medium text-[#F9FAFB] bg-white/10 rounded-lg hover:bg-white/15 transition-colors"
+          >
+            Send another message
+          </button>
+        </div>
+      </div>
+    );
+  }
+
   return (
     <div className="min-h-screen bg-[#0A0F1A]">
       {/* Header */}
-      <div className="section-padding pb-0 max-w-3xl mx-auto">
+      <div className="section-padding pb-0 max-w-2xl mx-auto">
         <span className="inline-block px-3 py-1 text-xs font-mono uppercase tracking-widest text-[#8B5CF6] bg-[#8B5CF6]/10 rounded-full mb-4">
           Get Involved
         </span>
@@ -54,92 +64,101 @@ export function ConnectPage() {
           Connect
         </h1>
         <p className="text-lg text-[#9CA3AF]">
-          Extinction Clock is an open research platform. If you have expertise to contribute,
-          data to share, or a correction to flag, we want to hear from you.
+          Extinction Clock improves through expert input. If you have data to contribute,
+          findings to share, or want to collaborate — send a message below.
         </p>
       </div>
 
-      {/* About the Project */}
-      <section className="section-padding max-w-3xl mx-auto">
-        <div className="card-dark p-6 lg:p-8 mb-8">
-          <h2 className="text-xl font-bold text-[#F9FAFB] mb-4">About This Project</h2>
-          <p className="text-sm text-[#9CA3AF] mb-4">
-            Extinction Clock was built to make the connection between artificial intelligence,
-            industrial animal agriculture, and biodiversity loss visible and understandable —
-            to non-experts as well as researchers.
-          </p>
-          <p className="text-sm text-[#9CA3AF] mb-4">
-            We draw exclusively on peer-reviewed research and authoritative conservation assessments.
-            The Methodology page explains exactly what we claim and how we calculate it.
-          </p>
-          <p className="text-sm text-[#9CA3AF]">
-            This is not a finished product. It is a living resource that improves as new IUCN
-            assessments, WWF reports, and agricultural AI research are published.
-          </p>
-        </div>
-
-        {/* Social Links */}
-        <h2 className="text-xl font-bold text-[#F9FAFB] mb-4">Find Us</h2>
-        <div className="space-y-3 mb-10">
-          {socialLinks.map((link) => {
-            const Icon = link.icon;
+      {/* Who we want to hear from */}
+      <section className="section-padding pb-0 max-w-2xl mx-auto">
+        <div className="grid grid-cols-2 gap-3 mb-10">
+          {whoWeWantToHear.map((item, i) => {
+            const Icon = item.icon;
             return (
-              <a
-                key={link.label}
-                href={link.href}
-                target={link.href.startsWith('mailto') ? '_self' : '_blank'}
-                rel="noopener noreferrer"
-                className="flex items-center gap-4 p-4 card-dark hover:border-white/20 transition-all group"
-              >
-                <div className="w-10 h-10 rounded-lg flex items-center justify-center bg-white/5 flex-shrink-0">
-                  <Icon className="w-5 h-5" style={{ color: link.color }} />
+              <div key={i} className="card-dark p-4">
+                <div className="flex items-center gap-2 mb-1">
+                  <Icon className="w-4 h-4 text-[#8B5CF6]" />
+                  <p className="text-sm font-bold text-[#F9FAFB]">{item.label}</p>
                 </div>
-                <div>
-                  <p className="text-sm font-bold text-[#F9FAFB] group-hover:text-[#EF4444] transition-colors">
-                    {link.label}
-                  </p>
-                  <p className="text-xs text-[#9CA3AF]">{link.description}</p>
-                </div>
-              </a>
-            );
-          })}
-        </div>
-
-        {/* Expert Contributions */}
-        <h2 className="text-xl font-bold text-[#F9FAFB] mb-2">Expert Contributions</h2>
-        <p className="text-sm text-[#9CA3AF] mb-5">
-          We actively seek contributions from researchers and practitioners in ecology,
-          conservation biology, agricultural AI, and environmental policy.
-        </p>
-        <div className="space-y-4">
-          {contributionTypes.map((type, i) => {
-            const Icon = type.icon;
-            return (
-              <div key={i} className="card-dark p-5 flex items-start gap-4">
-                <div className="w-10 h-10 rounded-lg bg-[#EF4444]/10 flex items-center justify-center flex-shrink-0">
-                  <Icon className="w-5 h-5 text-[#EF4444]" />
-                </div>
-                <div>
-                  <h3 className="text-sm font-bold text-[#F9FAFB] mb-1">{type.title}</h3>
-                  <p className="text-sm text-[#9CA3AF]">{type.description}</p>
-                </div>
+                <p className="text-xs text-[#9CA3AF]">{item.example}</p>
               </div>
             );
           })}
         </div>
+      </section>
 
-        <div className="mt-6 p-4 bg-[#EF4444]/10 border border-[#EF4444]/20 rounded-lg">
-          <p className="text-sm text-[#9CA3AF]">
-            To contribute, email us at{' '}
-            <a
-              href="mailto:shekhar.study99@gmail.com"
-              className="text-[#EF4444] hover:underline"
+      {/* Form */}
+      <section className="section-padding pt-0 max-w-2xl mx-auto">
+        <form onSubmit={handleSubmit} className="space-y-5">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+            <div>
+              <label className="block text-sm font-medium text-[#F9FAFB] mb-2">Name (optional)</label>
+              <input
+                type="text"
+                value={form.name}
+                onChange={(e) => setForm({ ...form, name: e.target.value })}
+                placeholder="Your name"
+                className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-lg text-[#F9FAFB] placeholder:text-[#9CA3AF]/50 focus:outline-none focus:border-[#8B5CF6]/50 transition-colors text-sm"
+              />
+            </div>
+            <div>
+              <label className="block text-sm font-medium text-[#F9FAFB] mb-2">Role / field (optional)</label>
+              <input
+                type="text"
+                value={form.role}
+                onChange={(e) => setForm({ ...form, role: e.target.value })}
+                placeholder="e.g. Conservation biologist"
+                className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-lg text-[#F9FAFB] placeholder:text-[#9CA3AF]/50 focus:outline-none focus:border-[#8B5CF6]/50 transition-colors text-sm"
+              />
+            </div>
+          </div>
+
+          <div>
+            <label className="block text-sm font-medium text-[#F9FAFB] mb-2">
+              How do you want to connect? <span className="text-[#8B5CF6]">*</span>
+            </label>
+            <select
+              required
+              value={form.type}
+              onChange={(e) => setForm({ ...form, type: e.target.value as ConnectionType })}
+              className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-lg text-[#F9FAFB] focus:outline-none focus:border-[#8B5CF6]/50 transition-colors text-sm appearance-none"
             >
-              shekhar.study99@gmail.com
-            </a>{' '}
-            with the subject line "Expert Contribution — [Your Field]".
-          </p>
-        </div>
+              <option value="" disabled className="bg-[#0A0F1A]">Select a type...</option>
+              {connectionTypes.map((t) => (
+                <option key={t.value} value={t.value} className="bg-[#0A0F1A]">
+                  {t.label}
+                </option>
+              ))}
+            </select>
+          </div>
+
+          <div>
+            <label className="block text-sm font-medium text-[#F9FAFB] mb-2">
+              Your message <span className="text-[#8B5CF6]">*</span>
+            </label>
+            <textarea
+              required
+              rows={5}
+              value={form.message}
+              onChange={(e) => setForm({ ...form, message: e.target.value })}
+              placeholder="Tell us what you'd like to contribute or discuss..."
+              className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-lg text-[#F9FAFB] placeholder:text-[#9CA3AF]/50 focus:outline-none focus:border-[#8B5CF6]/50 transition-colors text-sm resize-none"
+            />
+          </div>
+
+          <button
+            type="submit"
+            className="flex items-center gap-2 px-6 py-3 bg-[#8B5CF6] text-white font-medium rounded-lg hover:bg-[#8B5CF6]/90 transition-colors text-sm"
+          >
+            <Send className="w-4 h-4" />
+            Send message
+          </button>
+        </form>
+
+        <p className="mt-6 text-xs text-[#9CA3AF]/60">
+          All messages are reviewed manually. This site is a living resource — expert input
+          directly shapes what gets added or corrected.
+        </p>
       </section>
     </div>
   );
