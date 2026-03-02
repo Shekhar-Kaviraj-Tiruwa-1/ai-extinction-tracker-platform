@@ -64,7 +64,7 @@ export function ExtinctionRisk() {
   return (
     <div
       ref={sectionRef}
-      className="relative w-full bg-[#1B2838] section-padding"
+      className="relative w-full bg-[#0D1B0F] section-padding"
     >
       {/* Background Image */}
       <div className="absolute inset-0">
@@ -73,7 +73,7 @@ export function ExtinctionRisk() {
           alt="Extinction visualization"
           className="w-full h-full object-cover opacity-30"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-[#1B2838] via-[#1B2838]/80 to-[#1B2838]" />
+        <div className="absolute inset-0 bg-gradient-to-b from-[#0D1B0F] via-[#0D1B0F]/80 to-[#0D1B0F]" />
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto">
@@ -171,7 +171,7 @@ export function ExtinctionRisk() {
                     className="w-6 h-6 rounded-full border-4 transition-all duration-300"
                     style={{
                       borderColor: currentScenario.color,
-                      background: hoveredYear === index ? currentScenario.color : '#1B2838',
+                      background: hoveredYear === index ? currentScenario.color : '#0D1B0F',
                       boxShadow: hoveredYear === index ? `0 0 20px ${currentScenario.color}60` : 'none',
                     }}
                   />

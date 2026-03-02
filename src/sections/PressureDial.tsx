@@ -82,7 +82,7 @@ export function PressureDial() {
   return (
     <div
       ref={sectionRef}
-      className="relative w-full bg-[#1B2838] section-padding"
+      className="relative w-full bg-[#0D1B0F] section-padding"
     >
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-5">

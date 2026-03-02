@@ -16,7 +16,7 @@ const fullBibliography = [
 
 export function MethodologyPage() {
   return (
-    <div className="min-h-screen bg-[#1B2838]">
+    <div className="min-h-screen bg-[#0D1B0F]">
       {/* Header */}
       <div className="section-padding pb-0 max-w-4xl mx-auto">
         <span className="inline-block px-3 py-1 text-xs font-mono uppercase tracking-widest text-[#3B82F6] bg-[#3B82F6]/10 rounded-full mb-4">

@@ -51,7 +51,7 @@ export function ConnectPage() {
 
   if (submitted) {
     return (
-      <div className="min-h-screen bg-[#1B2838] flex items-center justify-center section-padding">
+      <div className="min-h-screen bg-[#0D1B0F] flex items-center justify-center section-padding">
         <div className="card-dark p-10 max-w-md w-full text-center">
           <CheckCircle className="w-16 h-16 text-[#8B5CF6] mx-auto mb-4" />
           <h2 className="text-2xl font-bold text-[#F9FAFB] mb-2">Message received</h2>
@@ -71,7 +71,7 @@ export function ConnectPage() {
   }
 
   return (
-    <div className="min-h-screen bg-[#1B2838]">
+    <div className="min-h-screen bg-[#0D1B0F]">
       {/* Header */}
       <div className="section-padding pb-0 max-w-2xl mx-auto">
         <span className="inline-block px-3 py-1 text-xs font-mono uppercase tracking-widest text-[#8B5CF6] bg-[#8B5CF6]/10 rounded-full mb-4">
@@ -140,9 +140,9 @@ export function ConnectPage() {
               onChange={(e) => setForm({ ...form, type: e.target.value as ConnectionType })}
               className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-lg text-[#F9FAFB] focus:outline-none focus:border-[#8B5CF6]/50 transition-colors text-sm appearance-none"
             >
-              <option value="" disabled className="bg-[#1B2838]">Select a type...</option>
+              <option value="" disabled className="bg-[#0D1B0F]">Select a type...</option>
               {connectionTypes.map((t) => (
-                <option key={t.value} value={t.value} className="bg-[#1B2838]">
+                <option key={t.value} value={t.value} className="bg-[#0D1B0F]">
                   {t.label}
                 </option>
               ))}

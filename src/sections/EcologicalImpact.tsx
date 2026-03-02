@@ -97,7 +97,7 @@ export function EcologicalImpact() {
   return (
     <div
       ref={sectionRef}
-      className="relative w-full bg-[#1B2838] section-padding"
+      className="relative w-full bg-[#0D1B0F] section-padding"
     >
       {/* Background Image */}
       <div className="absolute inset-0">
@@ -106,7 +106,7 @@ export function EcologicalImpact() {
           alt="Deforestation"
           className="w-full h-full object-cover opacity-25"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-[#1B2838] via-[#1B2838]/85 to-[#1B2838]" />
+        <div className="absolute inset-0 bg-gradient-to-b from-[#0D1B0F] via-[#0D1B0F]/85 to-[#0D1B0F]" />
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto">

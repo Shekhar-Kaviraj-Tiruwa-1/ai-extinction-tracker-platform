@@ -78,7 +78,7 @@ export function AIMechanisms() {
   return (
     <div
       ref={sectionRef}
-      className="relative w-full bg-[#1B2838] section-padding"
+      className="relative w-full bg-[#0D1B0F] section-padding"
     >
       {/* Background Image */}
       <div className="absolute inset-0">
@@ -87,7 +87,7 @@ export function AIMechanisms() {
           alt="Industrial agriculture"
           className="w-full h-full object-cover opacity-20"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-[#1B2838] via-[#1B2838]/90 to-[#1B2838]" />
+        <div className="absolute inset-0 bg-gradient-to-b from-[#0D1B0F] via-[#0D1B0F]/90 to-[#0D1B0F]" />
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto">

@@ -65,7 +65,7 @@ const allSources = [
 
 export function EvidencePage() {
   return (
-    <div className="min-h-screen bg-[#1B2838]">
+    <div className="min-h-screen bg-[#0D1B0F]">
       {/* Page Header */}
       <div className="section-padding pb-0 max-w-7xl mx-auto">
         <span className="inline-block px-3 py-1 text-xs font-mono uppercase tracking-widest text-[#EF4444] bg-[#EF4444]/10 rounded-full mb-4">

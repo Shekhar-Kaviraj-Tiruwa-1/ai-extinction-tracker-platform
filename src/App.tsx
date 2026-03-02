@@ -23,7 +23,7 @@ function ScrollToTop() {
 
 function AppLayout() {
   return (
-    <div className="relative min-h-screen bg-[#1B2838]">
+    <div className="relative min-h-screen bg-[#0D1B0F]">
       <Navigation />
       <ScrollToTop />
       <main>

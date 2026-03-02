@@ -103,7 +103,7 @@ const tabCards = [
 
 export function HomePage() {
   return (
-    <div className="min-h-screen bg-[#1B2838]">
+    <div className="min-h-screen bg-[#0D1B0F]">
       {/* Hero / Pathway Diagram */}
       <HeroSection />
 
@@ -155,7 +155,7 @@ export function HomePage() {
       </section>
 
       {/* Key Statistics */}
-      <section className="section-padding bg-[#253042]/40">
+      <section className="section-padding bg-[#162617]/40">
         <div className="max-w-7xl mx-auto">
           <h2 className="text-2xl font-bold text-[#F9FAFB] mb-8 text-center">
             The Numbers at a Glance
