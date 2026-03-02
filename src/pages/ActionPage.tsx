@@ -33,7 +33,7 @@ const recoveries = [
 
 export function ActionPage() {
   return (
-    <div className="min-h-screen bg-[#0A0F1A]">
+    <div className="min-h-screen bg-[#1B2838]">
       {/* Header */}
       <div className="section-padding pb-0 max-w-7xl mx-auto">
         <span className="inline-block px-3 py-1 text-xs font-mono uppercase tracking-widest text-[#10B981] bg-[#10B981]/10 rounded-full mb-4">

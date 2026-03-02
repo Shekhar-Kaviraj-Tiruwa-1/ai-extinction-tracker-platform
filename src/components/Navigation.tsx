@@ -35,8 +35,8 @@ export function Navigation() {
       <nav
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
           isScrolled
-            ? 'bg-[#0A0F1A]/95 backdrop-blur-md border-b border-white/5'
-            : 'bg-[#0A0F1A]/80 backdrop-blur-sm border-b border-white/5'
+            ? 'bg-[#1B2838]/95 backdrop-blur-md border-b border-white/5'
+            : 'bg-[#1B2838]/80 backdrop-blur-sm border-b border-white/5'
         }`}
       >
         <div className="w-full px-6 lg:px-12">
@@ -93,7 +93,7 @@ export function Navigation() {
         }`}
       >
         <div
-          className="absolute inset-0 bg-[#0A0F1A]/98 backdrop-blur-lg"
+          className="absolute inset-0 bg-[#1B2838]/98 backdrop-blur-lg"
           onClick={() => setIsMobileMenuOpen(false)}
         />
         <div

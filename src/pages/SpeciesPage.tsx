@@ -303,7 +303,7 @@ export function SpeciesPage() {
   const filtered = filter === 'all' ? species : species.filter((s) => s.status === filter);
 
   return (
-    <div className="min-h-screen bg-[#0A0F1A]">
+    <div className="min-h-screen bg-[#1B2838]">
       {/* Header */}
       <div className="section-padding pb-0 max-w-7xl mx-auto">
         <span className="inline-block px-3 py-1 text-xs font-mono uppercase tracking-widest text-[#F59E0B] bg-[#F59E0B]/10 rounded-full mb-4">

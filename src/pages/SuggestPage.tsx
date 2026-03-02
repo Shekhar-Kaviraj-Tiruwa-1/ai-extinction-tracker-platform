@@ -46,7 +46,7 @@ export function SuggestPage() {
 
   if (submitted) {
     return (
-      <div className="min-h-screen bg-[#0A0F1A] flex items-center justify-center section-padding">
+      <div className="min-h-screen bg-[#1B2838] flex items-center justify-center section-padding">
         <div className="card-dark p-10 max-w-md w-full text-center">
           <CheckCircle className="w-16 h-16 text-[#10B981] mx-auto mb-4" />
           <h2 className="text-2xl font-bold text-[#F9FAFB] mb-2">Thank you</h2>
@@ -66,7 +66,7 @@ export function SuggestPage() {
   }
 
   return (
-    <div className="min-h-screen bg-[#0A0F1A]">
+    <div className="min-h-screen bg-[#1B2838]">
       {/* Header */}
       <div className="section-padding pb-0 max-w-2xl mx-auto">
         <span className="inline-block px-3 py-1 text-xs font-mono uppercase tracking-widest text-[#9CA3AF] bg-white/5 rounded-full mb-4">
@@ -134,9 +134,9 @@ export function SuggestPage() {
               onChange={(e) => setForm({ ...form, type: e.target.value as SuggestionType })}
               className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-lg text-[#F9FAFB] focus:outline-none focus:border-[#EF4444]/50 transition-colors text-sm appearance-none"
             >
-              <option value="" disabled className="bg-[#0A0F1A]">Select a type...</option>
+              <option value="" disabled className="bg-[#1B2838]">Select a type...</option>
               {suggestionTypes.map((t) => (
-                <option key={t.value} value={t.value} className="bg-[#0A0F1A]">
+                <option key={t.value} value={t.value} className="bg-[#1B2838]">
                   {t.label}
                 </option>
               ))}

@@ -75,7 +75,7 @@ export function HeroSection() {
           alt="Network visualization"
           className="w-full h-full object-cover opacity-60"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-[#0A0F1A]/80 via-[#0A0F1A]/60 to-[#0A0F1A]" />
+        <div className="absolute inset-0 bg-gradient-to-b from-[#1B2838]/80 via-[#1B2838]/60 to-[#1B2838]" />
       </div>
 
       {/* Content */}

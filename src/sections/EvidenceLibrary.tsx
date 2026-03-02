@@ -105,7 +105,7 @@ export function EvidenceLibrary() {
   return (
     <div
       ref={sectionRef}
-      className="relative w-full bg-[#0A0F1A] section-padding"
+      className="relative w-full bg-[#1B2838] section-padding"
     >
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-5">

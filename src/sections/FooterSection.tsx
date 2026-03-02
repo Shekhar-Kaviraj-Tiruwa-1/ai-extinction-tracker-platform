@@ -3,7 +3,7 @@ import { Activity, Github, Twitter, Mail } from 'lucide-react';
 
 export function FooterSection() {
   return (
-    <footer className="relative w-full bg-[#0A0F1A] border-t border-white/5">
+    <footer className="relative w-full bg-[#1B2838] border-t border-white/5">
       <div className="max-w-7xl mx-auto px-6 lg:px-12 py-10">
         <div className="flex flex-col lg:flex-row items-start justify-between gap-8">
           {/* Logo + tagline */}

@@ -122,7 +122,7 @@ export function ActionFramework() {
   return (
     <div
       ref={sectionRef}
-      className="relative w-full bg-[#0A0F1A] section-padding"
+      className="relative w-full bg-[#1B2838] section-padding"
     >
       <div className="relative z-10 max-w-7xl mx-auto">
         {/* Section Header */}
