@@ -34,7 +34,7 @@ export function SuggestPage() {
         access_key: WEB3FORMS_KEY,
         subject: `Extinction Clock — Suggest: ${form.type}`,
         from_name: form.name || 'Anonymous',
-        email: form.email || 'Not provided',
+        ...(form.email && { email: form.email }),
         suggestion_type: form.type,
         source: form.source || 'Not provided',
         message: form.message,
