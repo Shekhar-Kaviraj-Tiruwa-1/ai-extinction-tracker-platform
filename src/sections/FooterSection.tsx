@@ -72,7 +72,7 @@ export function FooterSection() {
                 <Github className="w-5 h-5" />
               </a>
               <a
-                href="mailto:contact@extinctionClock.org"
+                href="mailto:shekhar.study99@gmail.com"
                 className="text-[#9CA3AF] hover:text-[#F9FAFB] transition-colors"
                 aria-label="Email"
               >

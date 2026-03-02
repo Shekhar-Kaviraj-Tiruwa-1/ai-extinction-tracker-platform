@@ -19,7 +19,7 @@ const socialLinks = [
     label: 'Email',
     description: 'For media enquiries, collaborations, or expert contributions',
     icon: Mail,
-    href: 'mailto:contact@extinctionClock.org',
+    href: 'mailto:shekhar.study99@gmail.com',
     color: '#EF4444',
   },
 ];
@@ -132,10 +132,10 @@ export function ConnectPage() {
           <p className="text-sm text-[#9CA3AF]">
             To contribute, email us at{' '}
             <a
-              href="mailto:contact@extinctionClock.org"
+              href="mailto:shekhar.study99@gmail.com"
               className="text-[#EF4444] hover:underline"
             >
-              contact@extinctionClock.org
+              shekhar.study99@gmail.com
             </a>{' '}
             with the subject line "Expert Contribution — [Your Field]".
           </p>
