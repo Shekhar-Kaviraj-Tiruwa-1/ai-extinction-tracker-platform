@@ -1,6 +1,8 @@
 import { useState } from 'react';
 import { Send, CheckCircle } from 'lucide-react';
 
+const WEB3FORMS_KEY = 'b522aa47-79b8-415c-9edb-ab1c3d1baf19';
+
 type SuggestionType = 'data-correction' | 'new-species' | 'new-research' | 'ui-bug' | 'other';
 
 const suggestionTypes: { value: SuggestionType; label: string }[] = [
@@ -20,11 +22,25 @@ export function SuggestPage() {
     source: '',
   });
   const [submitted, setSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // In production, this would POST to a backend or form service.
-    // For now it shows a confirmation to the user.
+    setLoading(true);
+    await fetch('https://api.web3forms.com/submit', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        access_key: WEB3FORMS_KEY,
+        subject: `Extinction Clock — Suggest: ${form.type}`,
+        from_name: form.name || 'Anonymous',
+        email: form.email || 'Not provided',
+        suggestion_type: form.type,
+        source: form.source || 'Not provided',
+        message: form.message,
+      }),
+    });
+    setLoading(false);
     setSubmitted(true);
   };
 
@@ -156,10 +172,11 @@ export function SuggestPage() {
 
           <button
             type="submit"
-            className="flex items-center gap-2 px-6 py-3 bg-[#EF4444] text-white font-medium rounded-lg hover:bg-[#EF4444]/90 transition-colors text-sm"
+            disabled={loading}
+            className="flex items-center gap-2 px-6 py-3 bg-[#EF4444] text-white font-medium rounded-lg hover:bg-[#EF4444]/90 transition-colors text-sm disabled:opacity-60 disabled:cursor-not-allowed"
           >
             <Send className="w-4 h-4" />
-            Submit suggestion
+            {loading ? 'Sending...' : 'Submit suggestion'}
           </button>
         </form>
 

@@ -1,4 +1,6 @@
 import { useState } from 'react';
+
+const WEB3FORMS_KEY = 'b522aa47-79b8-415c-9edb-ab1c3d1baf19';
 import { Send, CheckCircle, Microscope, FileText, Globe, Users } from 'lucide-react';
 
 type ConnectionType = 'scientist' | 'journalist' | 'policy' | 'educator' | 'general';
@@ -26,9 +28,24 @@ export function ConnectPage() {
     message: '',
   });
   const [submitted, setSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    setLoading(true);
+    await fetch('https://api.web3forms.com/submit', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        access_key: WEB3FORMS_KEY,
+        subject: `Extinction Clock — Connect: ${form.type}`,
+        from_name: form.name || 'Anonymous',
+        role: form.role || 'Not specified',
+        connection_type: form.type,
+        message: form.message,
+      }),
+    });
+    setLoading(false);
     setSubmitted(true);
   };
 
@@ -148,10 +165,11 @@ export function ConnectPage() {
 
           <button
             type="submit"
-            className="flex items-center gap-2 px-6 py-3 bg-[#8B5CF6] text-white font-medium rounded-lg hover:bg-[#8B5CF6]/90 transition-colors text-sm"
+            disabled={loading}
+            className="flex items-center gap-2 px-6 py-3 bg-[#8B5CF6] text-white font-medium rounded-lg hover:bg-[#8B5CF6]/90 transition-colors text-sm disabled:opacity-60 disabled:cursor-not-allowed"
           >
             <Send className="w-4 h-4" />
-            Send message
+            {loading ? 'Sending...' : 'Send message'}
           </button>
         </form>
 
