@@ -114,7 +114,7 @@ export function HomePage() {
             The Core Idea
           </span>
           <h2 className="text-3xl lg:text-4xl font-bold text-[#F9FAFB] mb-6">
-            What is Extinction Clock?
+            What is AI Extinction Clock?
           </h2>
           <p className="text-lg text-[#9CA3AF] leading-relaxed mb-6">
             Right now, about <span className="text-[#F9FAFB] font-semibold">1 million species</span> are at risk of disappearing — many within our lifetime.
@@ -125,7 +125,7 @@ export function HomePage() {
             But it is making industrial animal farming dramatically more efficient — which means bigger operations, more land cleared, more water used, and faster habitat destruction.
           </p>
           <p className="text-lg text-[#9CA3AF] leading-relaxed">
-            Extinction Clock tracks this connection. We use peer-reviewed data to map the chain from <span className="text-[#F9FAFB]">AI adoption → industrial efficiency → agricultural expansion → habitat loss → species extinction</span>.
+            AI Extinction Clock tracks this connection. We use peer-reviewed data to map the chain from <span className="text-[#F9FAFB]">AI adoption → industrial efficiency → agricultural expansion → habitat loss → species extinction</span>.
             Then we show what governance and individual action can do about it.
           </p>
         </div>

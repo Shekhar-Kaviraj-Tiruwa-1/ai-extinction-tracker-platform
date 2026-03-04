@@ -50,7 +50,7 @@ export function Navigation() {
                 <Activity className="w-4 h-4 text-[#EF4444]" />
               </div>
               <span className="font-bold text-base tracking-tight text-[#F9FAFB] hidden sm:block">
-                Extinction Clock
+                AI Extinction Clock
               </span>
             </Link>
 

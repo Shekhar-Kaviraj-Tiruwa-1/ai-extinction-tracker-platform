@@ -38,7 +38,7 @@ export function ConnectPage() {
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
         access_key: WEB3FORMS_KEY,
-        subject: `Extinction Clock — Connect: ${form.type}`,
+        subject: `AI Extinction Clock — Connect: ${form.type}`,
         from_name: form.name || 'Anonymous',
         role: form.role || 'Not specified',
         connection_type: form.type,
@@ -81,7 +81,7 @@ export function ConnectPage() {
           Connect
         </h1>
         <p className="text-lg text-[#9CA3AF]">
-          Extinction Clock improves through expert input. If you have data to contribute,
+          AI Extinction Clock improves through expert input. If you have data to contribute,
           findings to share, or want to collaborate — send a message below.
         </p>
       </div>

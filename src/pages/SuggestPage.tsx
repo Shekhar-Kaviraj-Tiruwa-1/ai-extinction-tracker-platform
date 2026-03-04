@@ -32,7 +32,7 @@ export function SuggestPage() {
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
         access_key: WEB3FORMS_KEY,
-        subject: `Extinction Clock — Suggest: ${form.type}`,
+        subject: `AI Extinction Clock — Suggest: ${form.type}`,
         from_name: form.name || 'Anonymous',
         ...(form.email && { email: form.email }),
         suggestion_type: form.type,

@@ -12,7 +12,7 @@ export function FooterSection() {
               <div className="w-8 h-8 rounded-full border-2 border-[#EF4444]/60 flex items-center justify-center">
                 <Activity className="w-4 h-4 text-[#EF4444]" />
               </div>
-              <span className="font-bold text-[#F9FAFB]">Extinction Clock</span>
+              <span className="font-bold text-[#F9FAFB]">AI Extinction Clock</span>
             </div>
             <p className="text-xs text-[#9CA3AF] leading-relaxed">
               Tracking the connection between AI, industrial agriculture, and biodiversity loss.
@@ -85,7 +85,7 @@ export function FooterSection() {
         {/* Copyright */}
         <div className="mt-10 pt-6 border-t border-white/5 text-center">
           <p className="text-xs text-[#9CA3AF]">
-            © 2026 Extinction Clock. Data sourced from IPBES, IUCN, WWF, FAO, and peer-reviewed research.
+            © 2026 AI Extinction Clock. Data sourced from IPBES, IUCN, WWF, FAO, and peer-reviewed research.
           </p>
         </div>
       </div>
