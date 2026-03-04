@@ -81,10 +81,10 @@ export function ToolkitSection() {
   return (
     <div
       ref={sectionRef}
-      className="relative w-full min-h-screen bg-[#0B0F17] py-20 lg:py-32"
+      className="relative w-full min-h-screen bg-[#F8FAFF] py-20 lg:py-32"
     >
       {/* Background Gradient */}
-      <div className="absolute inset-0 bg-gradient-to-b from-[#141B2A]/50 via-transparent to-transparent pointer-events-none" />
+      <div className="absolute inset-0 bg-gradient-to-b from-gray-100/50 via-transparent to-transparent pointer-events-none" />
 
       <div className="relative z-10 w-full px-6 lg:px-12">
         {/* Header */}
@@ -95,10 +95,10 @@ export function ToolkitSection() {
               isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
             }`}
           >
-            <h2 className="font-display font-bold text-4xl lg:text-5xl text-[#F2F5FA] mb-6">
+            <h2 className="font-display font-bold text-4xl lg:text-5xl text-[#0F1729] mb-6">
               INTERVENTION TOOLKIT
             </h2>
-            <p className="text-[#A7B1C8] text-base leading-relaxed">
+            <p className="text-[#4B5563] text-base leading-relaxed">
               Governance is most effective when it matches the risk stage. 
               Here are early signals and actions for each phase of the clock.
             </p>
@@ -113,11 +113,11 @@ export function ToolkitSection() {
             <div className="card-sharp p-6 lg:p-8 max-w-sm">
               <div className="flex items-center gap-3 mb-4">
                 <Download className="w-5 h-5 text-[#FF6A3D]" />
-                <h3 className="font-display font-bold text-lg text-[#F2F5FA]">
+                <h3 className="font-display font-bold text-lg text-[#0F1729]">
                   Download the framework
                 </h3>
               </div>
-              <p className="text-[#A7B1C8] text-sm mb-6">
+              <p className="text-[#4B5563] text-sm mb-6">
                 PDF + JSON (risk indicators, case references, policy levers).
               </p>
               <button className="w-full py-3 bg-[#FF6A3D] text-white font-medium hover:bg-[#FF6A3D]/90 transition-colors">
@@ -144,13 +144,13 @@ export function ToolkitSection() {
                     <span className={`font-mono text-2xl font-bold ${stage.color}`}>
                       {stage.number}
                     </span>
-                    <span className="font-display font-bold text-xl text-[#F2F5FA]">
+                    <span className="font-display font-bold text-xl text-[#0F1729]">
                       {stage.name}
                     </span>
                   </div>
 
                   {/* Description */}
-                  <p className="flex-1 text-[#A7B1C8] text-sm lg:text-base">
+                  <p className="flex-1 text-[#4B5563] text-sm lg:text-base">
                     {stage.description}
                   </p>
 
@@ -161,7 +161,7 @@ export function ToolkitSection() {
                       return (
                         <span
                           key={tag.label}
-                          className={`inline-flex items-center gap-2 px-3 py-2 ${stage.bgColor} text-[#F2F5FA] text-xs font-mono tracking-wide`}
+                          className={`inline-flex items-center gap-2 px-3 py-2 ${stage.bgColor} text-[#0F1729] text-xs font-mono tracking-wide`}
                         >
                           <Icon className="w-3 h-3" />
                           <span>{tag.label}</span>
@@ -181,7 +181,7 @@ export function ToolkitSection() {
             isVisible ? 'opacity-100' : 'opacity-0'
           }`}
         >
-          <p className="text-xs font-mono tracking-wider text-[#A7B1C8]">
+          <p className="text-xs font-mono tracking-wider text-[#4B5563]">
             Each intervention is designed to be implemented before the next risk stage escalates.
           </p>
         </div>

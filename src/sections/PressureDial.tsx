@@ -82,7 +82,7 @@ export function PressureDial() {
   return (
     <div
       ref={sectionRef}
-      className="relative w-full bg-[#0D1B0F] section-padding"
+      className="relative w-full bg-[#F7FFF7] section-padding"
     >
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-5">
@@ -98,10 +98,10 @@ export function PressureDial() {
             isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
           }`}
         >
-          <h2 className="text-3xl lg:text-5xl font-bold text-[#F9FAFB] mb-4">
+          <h2 className="text-3xl lg:text-5xl font-bold text-[#111827] mb-4">
             The Pressure Dial
           </h2>
-          <p className="text-lg text-[#9CA3AF] max-w-2xl mx-auto">
+          <p className="text-lg text-[#6B7280] max-w-2xl mx-auto">
             Governance interventions can turn down extinction pressure. Toggle the levers below to see how policy changes the trajectory.
           </p>
         </div>
@@ -156,18 +156,18 @@ export function PressureDial() {
                   transform: `translateX(-50%) rotate(${-90 + (180 * currentPressure) / 100}deg)`,
                 }}
               >
-                <div className="w-full h-full bg-[#F9FAFB] rounded-full" />
+                <div className="w-full h-full bg-white rounded-full" />
               </div>
               
               {/* Center pivot */}
-              <div className="absolute bottom-2 left-1/2 -translate-x-1/2 w-6 h-6 bg-[#F9FAFB] rounded-full" />
+              <div className="absolute bottom-2 left-1/2 -translate-x-1/2 w-6 h-6 bg-white rounded-full" />
               
               {/* Value display */}
               <div className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-8 text-center">
                 <div className="text-4xl font-bold font-mono" style={{ color: riskColor }}>
                   {currentPressure}%
                 </div>
-                <div className="text-sm text-[#9CA3AF]">Extinction Pressure</div>
+                <div className="text-sm text-[#6B7280]">Extinction Pressure</div>
               </div>
             </div>
 
@@ -176,7 +176,7 @@ export function PressureDial() {
               className="px-6 py-3 rounded-lg text-center"
               style={{ background: `${riskColor}20`, border: `1px solid ${riskColor}40` }}
             >
-              <div className="text-sm text-[#9CA3AF]">Risk Level</div>
+              <div className="text-sm text-[#6B7280]">Risk Level</div>
               <div className="text-2xl font-bold" style={{ color: riskColor }}>
                 {riskLevel}
               </div>
@@ -185,7 +185,7 @@ export function PressureDial() {
             {/* Impact Summary */}
             {selectedOptions.length > 0 && (
               <div className="mt-6 text-center">
-                <p className="text-sm text-[#9CA3AF]">
+                <p className="text-sm text-[#6B7280]">
                   Governance interventions have reduced extinction pressure by{' '}
                   <span className="text-[#10B981] font-bold">{totalReduction}%</span>
                 </p>
@@ -199,7 +199,7 @@ export function PressureDial() {
               isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
             }`}
           >
-            <h3 className="text-lg font-bold text-[#F9FAFB] mb-4">Governance Levers</h3>
+            <h3 className="text-lg font-bold text-[#111827] mb-4">Governance Levers</h3>
             
             {governanceOptions.map((option, index) => {
               const Icon = option.icon;
@@ -211,7 +211,7 @@ export function PressureDial() {
                   className={`p-4 rounded-lg cursor-pointer transition-all duration-300 ${
                     isSelected
                       ? 'bg-[#10B981]/10 border border-[#10B981]/40'
-                      : 'bg-white/5 border border-transparent hover:bg-white/10'
+                      : 'bg-gray-50 border border-transparent hover:bg-gray-100'
                   }`}
                   onClick={() => toggleOption(option.id)}
                   style={{
@@ -223,7 +223,7 @@ export function PressureDial() {
                   <div className="flex items-start gap-4">
                     <div
                       className={`w-6 h-6 rounded flex items-center justify-center flex-shrink-0 transition-colors ${
-                        isSelected ? 'bg-[#10B981]' : 'bg-white/10'
+                        isSelected ? 'bg-[#10B981]' : 'bg-gray-100'
                       }`}
                     >
                       {isSelected && <Check className="w-4 h-4 text-white" />}
@@ -232,12 +232,12 @@ export function PressureDial() {
                     <div className="flex-1">
                       <div className="flex items-center justify-between">
                         <div className="flex items-center gap-2">
-                          <Icon className="w-4 h-4 text-[#9CA3AF]" />
-                          <span className="font-medium text-[#F9FAFB]">{option.label}</span>
+                          <Icon className="w-4 h-4 text-[#6B7280]" />
+                          <span className="font-medium text-[#111827]">{option.label}</span>
                         </div>
                         <span className="text-sm font-mono text-[#10B981]">-{option.impact}%</span>
                       </div>
-                      <p className="text-sm text-[#9CA3AF] mt-1">{option.description}</p>
+                      <p className="text-sm text-[#6B7280] mt-1">{option.description}</p>
                     </div>
                   </div>
                 </div>
@@ -249,10 +249,10 @@ export function PressureDial() {
               <div className="flex items-start gap-3">
                 <AlertTriangle className="w-5 h-5 text-[#F59E0B] flex-shrink-0 mt-0.5" />
                 <div>
-                  <p className="text-sm text-[#F9FAFB]">
+                  <p className="text-sm text-[#111827]">
                     <span className="font-bold">Governance off = dial turns up.</span> Without intervention, AI efficiency gains translate to expanded production and accelerated habitat loss.
                   </p>
-                  <p className="text-sm text-[#9CA3AF] mt-2">
+                  <p className="text-sm text-[#6B7280] mt-2">
                     <span className="font-bold">Governance on = dial capped.</span> Policy levers can redirect efficiency toward footprint reduction rather than volume expansion.
                   </p>
                 </div>

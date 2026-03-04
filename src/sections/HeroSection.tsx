@@ -75,7 +75,7 @@ export function HeroSection() {
           alt="Network visualization"
           className="w-full h-full object-cover opacity-60"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-[#0D1B0F]/80 via-[#0D1B0F]/60 to-[#0D1B0F]" />
+        <div className="absolute inset-0 bg-gradient-to-b from-[#F7FFF7]/80 via-[#F7FFF7]/60 to-[#F7FFF7]" />
       </div>
 
       {/* Content */}
@@ -86,11 +86,11 @@ export function HeroSection() {
             isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
           }`}
         >
-          <h1 className="text-4xl lg:text-6xl xl:text-7xl font-bold text-[#F9FAFB] mb-4">
+          <h1 className="text-4xl lg:text-6xl xl:text-7xl font-bold text-[#111827] mb-4">
             When Efficiency Becomes{' '}
             <span className="text-[#EF4444]">Extinction</span>
           </h1>
-          <p className="text-lg lg:text-xl text-[#9CA3AF] max-w-2xl mx-auto">
+          <p className="text-lg lg:text-xl text-[#6B7280] max-w-2xl mx-auto">
             How AI automation accelerates biodiversity loss through industrial animal agriculture
           </p>
         </div>
@@ -139,13 +139,13 @@ export function HeroSection() {
                       
                       {/* Label */}
                       <div className="absolute -bottom-8 left-1/2 -translate-x-1/2 whitespace-nowrap">
-                        <span className="text-xs font-medium text-[#9CA3AF]">{node.title}</span>
+                        <span className="text-xs font-medium text-[#6B7280]">{node.title}</span>
                       </div>
                       
                       {/* Tooltip */}
                       {isActive && (
                         <div className="absolute -top-24 left-1/2 -translate-x-1/2 w-48 p-3 card-dark z-20">
-                          <p className="text-xs text-[#F9FAFB] text-center">{node.description}</p>
+                          <p className="text-xs text-[#111827] text-center">{node.description}</p>
                         </div>
                       )}
                     </div>
@@ -197,12 +197,12 @@ export function HeroSection() {
                       </div>
                       
                       <div className="mt-2 text-center">
-                        <span className="text-sm font-medium text-[#F9FAFB]">{node.title}</span>
+                        <span className="text-sm font-medium text-[#111827]">{node.title}</span>
                       </div>
                       
                       {isActive && (
                         <div className="mt-2 p-3 card-dark">
-                          <p className="text-xs text-[#9CA3AF] text-center">{node.description}</p>
+                          <p className="text-xs text-[#6B7280] text-center">{node.description}</p>
                         </div>
                       )}
                     </div>
@@ -225,11 +225,11 @@ export function HeroSection() {
         >
           <div className="inline-flex items-center gap-4 px-6 py-3 card-dark">
             <AlertTriangle className="w-6 h-6 text-[#EF4444]" />
-            <span className="text-[#9CA3AF]">
-              <span className="text-[#F9FAFB] font-bold">~1 million species</span> threatened with extinction
+            <span className="text-[#6B7280]">
+              <span className="text-[#111827] font-bold">~1 million species</span> threatened with extinction
             </span>
           </div>
-          <p className="mt-2 text-xs text-[#9CA3AF]">IPBES Global Assessment, 2019</p>
+          <p className="mt-2 text-xs text-[#6B7280]">IPBES Global Assessment, 2019</p>
         </div>
 
         {/* Scroll Indicator */}
@@ -238,7 +238,7 @@ export function HeroSection() {
             isVisible ? 'opacity-100' : 'opacity-0'
           }`}
         >
-          <ChevronDown className="w-6 h-6 text-[#9CA3AF] animate-bounce" />
+          <ChevronDown className="w-6 h-6 text-[#6B7280] animate-bounce" />
         </div>
       </div>
     </div>

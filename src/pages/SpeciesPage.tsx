@@ -193,10 +193,10 @@ function SpeciesCard({ s }: { s: Species }) {
               rel="noopener noreferrer"
               className="group inline-flex items-center gap-1.5 hover:opacity-80 transition-opacity"
             >
-              <h3 className="text-xl font-bold text-[#F9FAFB] group-hover:underline">{s.name}</h3>
-              <ExternalLink className="w-4 h-4 text-[#9CA3AF] opacity-0 group-hover:opacity-100 transition-opacity" />
+              <h3 className="text-xl font-bold text-[#111827] group-hover:underline">{s.name}</h3>
+              <ExternalLink className="w-4 h-4 text-[#6B7280] opacity-0 group-hover:opacity-100 transition-opacity" />
             </a>
-            <p className="text-sm italic text-[#9CA3AF]">{s.latin}</p>
+            <p className="text-sm italic text-[#6B7280]">{s.latin}</p>
           </div>
           <div className="flex flex-col items-end gap-1 flex-shrink-0">
             <span
@@ -205,11 +205,11 @@ function SpeciesCard({ s }: { s: Species }) {
             >
               {cfg.label}
             </span>
-            <span className="text-xs text-[#9CA3AF] font-mono">{s.statusYear}</span>
+            <span className="text-xs text-[#6B7280] font-mono">{s.statusYear}</span>
           </div>
         </div>
 
-        <div className="flex flex-wrap gap-4 text-xs text-[#9CA3AF] mb-4">
+        <div className="flex flex-wrap gap-4 text-xs text-[#6B7280] mb-4">
           <span className="flex items-center gap-1.5">
             <MapPin className="w-3.5 h-3.5" style={{ color: cfg.color }} />
             {s.location}
@@ -220,14 +220,14 @@ function SpeciesCard({ s }: { s: Species }) {
           </span>
         </div>
 
-        <p className="text-sm text-[#9CA3AF]">
-          <span className="text-[#F9FAFB] font-medium">Ecosystem role: </span>
+        <p className="text-sm text-[#6B7280]">
+          <span className="text-[#111827] font-medium">Ecosystem role: </span>
           {s.ecosystemRole}
         </p>
 
         {s.conservationNote && (
           <div className="mt-4 p-3 rounded-lg bg-[#10B981]/10 border border-[#10B981]/20">
-            <p className="text-xs text-[#9CA3AF]">
+            <p className="text-xs text-[#6B7280]">
               <span className="text-[#10B981] font-medium">Note: </span>
               {s.conservationNote}
             </p>
@@ -249,15 +249,15 @@ function SpeciesCard({ s }: { s: Species }) {
 
       {/* Expanded */}
       {expanded && (
-        <div className="border-t border-white/10 p-6 grid grid-cols-1 lg:grid-cols-2 gap-6">
+        <div className="border-t border-gray-200 p-6 grid grid-cols-1 lg:grid-cols-2 gap-6">
           <div>
-            <h4 className="text-sm font-bold text-[#F9FAFB] mb-3 flex items-center gap-2">
+            <h4 className="text-sm font-bold text-[#111827] mb-3 flex items-center gap-2">
               <AlertTriangle className="w-4 h-4 text-[#EF4444]" />
               Primary Threats
             </h4>
             <ul className="space-y-2">
               {s.primaryThreats.map((t, i) => (
-                <li key={i} className="flex items-start gap-2 text-sm text-[#9CA3AF]">
+                <li key={i} className="flex items-start gap-2 text-sm text-[#6B7280]">
                   <span className="w-1.5 h-1.5 rounded-full mt-1.5 flex-shrink-0" style={{ background: cfg.color }} />
                   {t}
                 </li>
@@ -265,13 +265,13 @@ function SpeciesCard({ s }: { s: Species }) {
             </ul>
           </div>
           <div>
-            <h4 className="text-sm font-bold text-[#F9FAFB] mb-3 flex items-center gap-2">
+            <h4 className="text-sm font-bold text-[#111827] mb-3 flex items-center gap-2">
               <Skull className="w-4 h-4 text-[#F59E0B]" />
               Cascade Effects
             </h4>
             <ul className="space-y-2">
               {s.cascadeEffects.map((e, i) => (
-                <li key={i} className="flex items-start gap-2 text-sm text-[#9CA3AF]">
+                <li key={i} className="flex items-start gap-2 text-sm text-[#6B7280]">
                   <span className="w-1.5 h-1.5 rounded-full mt-1.5 flex-shrink-0 bg-[#F59E0B]" />
                   {e}
                 </li>
@@ -279,7 +279,7 @@ function SpeciesCard({ s }: { s: Species }) {
             </ul>
           </div>
           <div className="lg:col-span-2 flex items-center justify-between flex-wrap gap-3">
-            <p className="text-xs text-[#9CA3AF]/60 font-mono">Source: {s.source}</p>
+            <p className="text-xs text-[#6B7280]/60 font-mono">Source: {s.source}</p>
             <a
               href={s.learnMoreUrl}
               target="_blank"
@@ -303,16 +303,16 @@ export function SpeciesPage() {
   const filtered = filter === 'all' ? species : species.filter((s) => s.status === filter);
 
   return (
-    <div className="min-h-screen bg-[#0D1B0F]">
+    <div className="min-h-screen bg-[#F7FFF7]">
       {/* Header */}
       <div className="section-padding pb-0 max-w-7xl mx-auto">
         <span className="inline-block px-3 py-1 text-xs font-mono uppercase tracking-widest text-[#F59E0B] bg-[#F59E0B]/10 rounded-full mb-4">
           Case Studies
         </span>
-        <h1 className="text-4xl lg:text-5xl font-bold text-[#F9FAFB] mb-4">
+        <h1 className="text-4xl lg:text-5xl font-bold text-[#111827] mb-4">
           Species
         </h1>
-        <p className="text-lg text-[#9CA3AF] max-w-2xl mb-8">
+        <p className="text-lg text-[#6B7280] max-w-2xl mb-8">
           Ten case studies showing what extinction actually means — from the animal that disappears
           to the ecosystem functions that collapse in its absence.
         </p>
@@ -322,7 +322,7 @@ export function SpeciesPage() {
           <button
             onClick={() => setFilter('all')}
             className={`px-4 py-2 rounded-lg text-sm font-medium transition-all ${
-              filter === 'all' ? 'bg-white/15 text-[#F9FAFB]' : 'bg-white/5 text-[#9CA3AF] hover:bg-white/10'
+              filter === 'all' ? 'bg-gray-200 text-[#111827]' : 'bg-gray-50 text-[#6B7280] hover:bg-gray-100'
             }`}
           >
             All ({species.length})
@@ -335,7 +335,7 @@ export function SpeciesPage() {
                 key={s}
                 onClick={() => setFilter(s)}
                 className={`px-4 py-2 rounded-lg text-sm font-medium transition-all ${
-                  filter === s ? 'text-white' : 'text-[#9CA3AF] hover:bg-white/10'
+                  filter === s ? 'text-white' : 'text-[#6B7280] hover:bg-gray-100'
                 }`}
                 style={
                   filter === s
@@ -362,9 +362,9 @@ export function SpeciesPage() {
       {/* Bottom note */}
       <section className="section-padding pt-0 max-w-7xl mx-auto">
         <div className="card-dark p-6 text-center">
-          <p className="text-sm text-[#9CA3AF]">
+          <p className="text-sm text-[#6B7280]">
             These 10 species represent different taxonomic groups, extinction stages, and geographic regions.
-            The pattern across all of them is consistent: <span className="text-[#F9FAFB] font-medium">habitat loss and overexploitation driven by human activity</span>,
+            The pattern across all of them is consistent: <span className="text-[#111827] font-medium">habitat loss and overexploitation driven by human activity</span>,
             with no meaningful role for the species' own failure to adapt.
           </p>
         </div>

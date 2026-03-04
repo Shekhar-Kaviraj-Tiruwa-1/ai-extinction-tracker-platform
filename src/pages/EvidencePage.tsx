@@ -65,20 +65,20 @@ const allSources = [
 
 export function EvidencePage() {
   return (
-    <div className="min-h-screen bg-[#0D1B0F]">
+    <div className="min-h-screen bg-[#F7FFF7]">
       {/* Page Header */}
       <div className="section-padding pb-0 max-w-7xl mx-auto">
         <span className="inline-block px-3 py-1 text-xs font-mono uppercase tracking-widest text-[#EF4444] bg-[#EF4444]/10 rounded-full mb-4">
           Data & Research
         </span>
-        <h1 className="text-4xl lg:text-5xl font-bold text-[#F9FAFB] mb-4">
+        <h1 className="text-4xl lg:text-5xl font-bold text-[#111827] mb-4">
           Evidence Library
         </h1>
-        <p className="text-lg text-[#9CA3AF] max-w-2xl mb-2">
+        <p className="text-lg text-[#6B7280] max-w-2xl mb-2">
           Every statistic on this page is drawn from peer-reviewed research or authoritative conservation assessments.
           Sources are listed at the bottom of this page.
         </p>
-        <p className="text-sm text-[#9CA3AF]/60 font-mono">
+        <p className="text-sm text-[#6B7280]/60 font-mono">
           Data current as of early 2025. IUCN figures updated continuously.
         </p>
       </div>
@@ -88,7 +88,7 @@ export function EvidencePage() {
 
       {/* Additional Data: Species Counts */}
       <section className="section-padding max-w-7xl mx-auto">
-        <h2 className="text-2xl font-bold text-[#F9FAFB] mb-6">IUCN Red List: Full Picture (2024)</h2>
+        <h2 className="text-2xl font-bold text-[#111827] mb-6">IUCN Red List: Full Picture (2024)</h2>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
           {[
             { label: 'Species assessed', value: '~166,000', color: '#3B82F6' },
@@ -100,23 +100,23 @@ export function EvidencePage() {
               <div className="text-2xl lg:text-3xl font-bold font-mono mb-1" style={{ color: item.color }}>
                 {item.value}
               </div>
-              <div className="text-xs text-[#9CA3AF]">{item.label}</div>
+              <div className="text-xs text-[#6B7280]">{item.label}</div>
             </div>
           ))}
         </div>
-        <p className="text-xs text-[#9CA3AF]/60 font-mono">Source: IUCN Red List, 2024</p>
+        <p className="text-xs text-[#6B7280]/60 font-mono">Source: IUCN Red List, 2024</p>
       </section>
 
       {/* Water Footprint Table */}
       <section className="section-padding pt-0 max-w-7xl mx-auto">
-        <h2 className="text-2xl font-bold text-[#F9FAFB] mb-6">Water Cost of Animal Products</h2>
+        <h2 className="text-2xl font-bold text-[#111827] mb-6">Water Cost of Animal Products</h2>
         <div className="card-dark overflow-hidden">
           <table className="w-full text-sm">
             <thead>
-              <tr className="border-b border-white/10">
-                <th className="text-left p-4 text-[#9CA3AF] font-medium">Product</th>
-                <th className="text-right p-4 text-[#9CA3AF] font-medium">Water footprint (litres per kg)</th>
-                <th className="text-left p-4 text-[#9CA3AF] font-medium hidden md:table-cell">Visual</th>
+              <tr className="border-b border-gray-200">
+                <th className="text-left p-4 text-[#6B7280] font-medium">Product</th>
+                <th className="text-right p-4 text-[#6B7280] font-medium">Water footprint (litres per kg)</th>
+                <th className="text-left p-4 text-[#6B7280] font-medium hidden md:table-cell">Visual</th>
               </tr>
             </thead>
             <tbody>
@@ -128,13 +128,13 @@ export function EvidencePage() {
                 { product: 'Eggs', liters: 3300, max: 15415 },
                 { product: 'Lentils (for comparison)', liters: 900, max: 15415 },
               ].map((row, i) => (
-                <tr key={i} className="border-b border-white/5 last:border-0">
-                  <td className="p-4 text-[#F9FAFB] font-medium">{row.product}</td>
+                <tr key={i} className="border-b border-gray-200 last:border-0">
+                  <td className="p-4 text-[#111827] font-medium">{row.product}</td>
                   <td className="p-4 text-right font-mono" style={{ color: row.liters > 5000 ? '#EF4444' : row.liters > 2000 ? '#F59E0B' : '#10B981' }}>
                     {row.liters.toLocaleString()}
                   </td>
                   <td className="p-4 hidden md:table-cell">
-                    <div className="h-2 bg-white/5 rounded-full overflow-hidden w-48">
+                    <div className="h-2 bg-gray-50 rounded-full overflow-hidden w-48">
                       <div
                         className="h-full rounded-full"
                         style={{
@@ -149,13 +149,13 @@ export function EvidencePage() {
             </tbody>
           </table>
         </div>
-        <p className="text-xs text-[#9CA3AF]/60 font-mono mt-3">Source: Water Footprint Network</p>
+        <p className="text-xs text-[#6B7280]/60 font-mono mt-3">Source: Water Footprint Network</p>
       </section>
 
       {/* Full Bibliography */}
       <section className="section-padding pt-0 max-w-7xl mx-auto">
-        <h2 className="text-2xl font-bold text-[#F9FAFB] mb-2">Full Source List</h2>
-        <p className="text-sm text-[#9CA3AF] mb-6">
+        <h2 className="text-2xl font-bold text-[#111827] mb-2">Full Source List</h2>
+        <p className="text-sm text-[#6B7280] mb-6">
           All data on this site is drawn from the sources below. Click to access each original report.
         </p>
         <div className="space-y-3">
@@ -170,12 +170,12 @@ export function EvidencePage() {
                     href={source.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-sm font-medium text-[#F9FAFB] hover:text-[#3B82F6] transition-colors"
+                    className="text-sm font-medium text-[#111827] hover:text-[#3B82F6] transition-colors"
                   >
                     {source.title}
                   </a>
-                  <p className="text-xs text-[#9CA3AF] mt-1">
-                    <span className="text-[#9CA3AF]/60">Used for:</span> {source.used}
+                  <p className="text-xs text-[#6B7280] mt-1">
+                    <span className="text-[#6B7280]/60">Used for:</span> {source.used}
                   </p>
                 </div>
               </div>

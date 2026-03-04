@@ -105,7 +105,7 @@ export function EvidenceLibrary() {
   return (
     <div
       ref={sectionRef}
-      className="relative w-full bg-[#0D1B0F] section-padding"
+      className="relative w-full bg-[#F7FFF7] section-padding"
     >
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-5">
@@ -122,10 +122,10 @@ export function EvidenceLibrary() {
             isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
           }`}
         >
-          <h2 className="text-3xl lg:text-5xl font-bold text-[#F9FAFB] mb-4">
+          <h2 className="text-3xl lg:text-5xl font-bold text-[#111827] mb-4">
             Evidence Library
           </h2>
-          <p className="text-lg text-[#9CA3AF] max-w-2xl">
+          <p className="text-lg text-[#6B7280] max-w-2xl">
             Key statistics documenting the biodiversity crisis and AI's role as an acceleration layer
           </p>
         </div>
@@ -160,20 +160,20 @@ export function EvidenceLibrary() {
                   <span className="stat-number" style={{ color: card.color }}>
                     {card.stat}
                   </span>
-                  <span className="text-lg text-[#9CA3AF] ml-2">{card.unit}</span>
+                  <span className="text-lg text-[#6B7280] ml-2">{card.unit}</span>
                 </div>
 
                 {/* Description */}
-                <p className="text-sm text-[#9CA3AF] mb-4">{card.description}</p>
+                <p className="text-sm text-[#6B7280] mb-4">{card.description}</p>
 
                 {/* Visual */}
                 {card.visual === 'progress' && (
                   <div className="mt-4">
-                    <div className="flex justify-between text-xs text-[#9CA3AF] mb-1">
+                    <div className="flex justify-between text-xs text-[#6B7280] mb-1">
                       <span>Threatened</span>
                       <span>{animatedStats[card.id]?.toFixed(1) || 0}% of 8M species</span>
                     </div>
-                    <div className="h-2 bg-white/10 rounded-full overflow-hidden">
+                    <div className="h-2 bg-gray-100 rounded-full overflow-hidden">
                       <div
                         className="h-full rounded-full transition-all duration-1000"
                         style={{
@@ -212,7 +212,7 @@ export function EvidenceLibrary() {
                             background: driver.color,
                           }}
                         />
-                        <span className="text-xs text-[#9CA3AF]">{driver.percentage}%</span>
+                        <span className="text-xs text-[#6B7280]">{driver.percentage}%</span>
                       </div>
                     ))}
                   </div>
@@ -221,8 +221,8 @@ export function EvidenceLibrary() {
                 {card.visual === 'comparison' && (
                   <div className="mt-4 space-y-2">
                     <div className="flex items-center gap-2">
-                      <span className="text-xs text-[#9CA3AF] w-20">Livestock</span>
-                      <div className="flex-1 h-3 bg-white/10 rounded-full overflow-hidden">
+                      <span className="text-xs text-[#6B7280] w-20">Livestock</span>
+                      <div className="flex-1 h-3 bg-gray-100 rounded-full overflow-hidden">
                         <div
                           className="h-full rounded-full"
                           style={{
@@ -231,11 +231,11 @@ export function EvidenceLibrary() {
                           }}
                         />
                       </div>
-                      <span className="text-xs text-[#F9FAFB]">14.5%</span>
+                      <span className="text-xs text-[#111827]">14.5%</span>
                     </div>
                     <div className="flex items-center gap-2">
-                      <span className="text-xs text-[#9CA3AF] w-20">Transport</span>
-                      <div className="flex-1 h-3 bg-white/10 rounded-full overflow-hidden">
+                      <span className="text-xs text-[#6B7280] w-20">Transport</span>
+                      <div className="flex-1 h-3 bg-gray-100 rounded-full overflow-hidden">
                         <div
                           className="h-full rounded-full"
                           style={{
@@ -244,7 +244,7 @@ export function EvidenceLibrary() {
                           }}
                         />
                       </div>
-                      <span className="text-xs text-[#F9FAFB]">~16%</span>
+                      <span className="text-xs text-[#111827]">~16%</span>
                     </div>
                   </div>
                 )}
@@ -273,15 +273,15 @@ export function EvidenceLibrary() {
             isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
           }`}
         >
-          <h3 className="text-xl font-bold text-[#F9FAFB] mb-6">
+          <h3 className="text-xl font-bold text-[#111827] mb-6">
             Global Drivers of Biodiversity Loss
           </h3>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
             <div className="space-y-4">
               {extinctionDrivers.map((driver, i) => (
                 <div key={i} className="flex items-center gap-4">
-                  <span className="text-sm text-[#9CA3AF] w-32">{driver.name}</span>
-                  <div className="flex-1 h-4 bg-white/5 rounded-full overflow-hidden">
+                  <span className="text-sm text-[#6B7280] w-32">{driver.name}</span>
+                  <div className="flex-1 h-4 bg-gray-50 rounded-full overflow-hidden">
                     <div
                       className="h-full rounded-full transition-all duration-1000"
                       style={{
@@ -291,17 +291,17 @@ export function EvidenceLibrary() {
                       }}
                     />
                   </div>
-                  <span className="text-sm text-[#F9FAFB] w-12 text-right">{driver.percentage}%</span>
+                  <span className="text-sm text-[#111827] w-12 text-right">{driver.percentage}%</span>
                 </div>
               ))}
             </div>
             <div className="flex flex-col justify-center">
               <div className="p-4 bg-[#EF4444]/10 border border-[#EF4444]/20 rounded-lg">
-                <p className="text-sm text-[#F9FAFB]">
+                <p className="text-sm text-[#111827]">
                   <span className="font-bold">Key Insight:</span> Land-use change—primarily agriculture expansion—is the single largest driver of biodiversity loss, with animal agriculture being a major contributor through grazing and feed crop production.
                 </p>
               </div>
-              <p className="mt-4 text-xs text-[#9CA3AF]">
+              <p className="mt-4 text-xs text-[#6B7280]">
                 Source: IPBES Global Assessment Report on Biodiversity and Ecosystem Services, 2019
               </p>
             </div>

@@ -16,16 +16,16 @@ const fullBibliography = [
 
 export function MethodologyPage() {
   return (
-    <div className="min-h-screen bg-[#0D1B0F]">
+    <div className="min-h-screen bg-[#F7FFF7]">
       {/* Header */}
       <div className="section-padding pb-0 max-w-4xl mx-auto">
         <span className="inline-block px-3 py-1 text-xs font-mono uppercase tracking-widest text-[#3B82F6] bg-[#3B82F6]/10 rounded-full mb-4">
           Transparency
         </span>
-        <h1 className="text-4xl lg:text-5xl font-bold text-[#F9FAFB] mb-4">
+        <h1 className="text-4xl lg:text-5xl font-bold text-[#111827] mb-4">
           Methodology
         </h1>
-        <p className="text-lg text-[#9CA3AF]">
+        <p className="text-lg text-[#6B7280]">
           This page explains what we are claiming, what we are not, how we calculated things,
           and where the data comes from. If you find an error, please use the Suggest tab.
         </p>
@@ -37,13 +37,13 @@ export function MethodologyPage() {
           <div className="w-10 h-10 rounded-lg bg-[#EF4444]/20 flex items-center justify-center">
             <AlertTriangle className="w-5 h-5 text-[#EF4444]" />
           </div>
-          <h2 className="text-2xl font-bold text-[#F9FAFB]">What This Site Claims — and Does Not Claim</h2>
+          <h2 className="text-2xl font-bold text-[#111827]">What This Site Claims — and Does Not Claim</h2>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
           <div className="card-dark p-6 border-[#10B981]/30">
             <h3 className="text-base font-bold text-[#10B981] mb-4">We claim:</h3>
-            <ul className="space-y-3 text-sm text-[#9CA3AF]">
+            <ul className="space-y-3 text-sm text-[#6B7280]">
               {[
                 'AI adoption in animal agriculture increases the scale and efficiency of operations',
                 'Larger-scale operations require more land, water, and resources',
@@ -60,7 +60,7 @@ export function MethodologyPage() {
           </div>
           <div className="card-dark p-6 border-[#EF4444]/20">
             <h3 className="text-base font-bold text-[#EF4444] mb-4">We do not claim:</h3>
-            <ul className="space-y-3 text-sm text-[#9CA3AF]">
+            <ul className="space-y-3 text-sm text-[#6B7280]">
               {[
                 'AI is the primary or sole driver of biodiversity loss',
                 'Specific species will go extinct by specific dates due to AI',
@@ -84,18 +84,18 @@ export function MethodologyPage() {
           <div className="w-10 h-10 rounded-lg bg-[#F59E0B]/20 flex items-center justify-center">
             <Calculator className="w-5 h-5 text-[#F59E0B]" />
           </div>
-          <h2 className="text-2xl font-bold text-[#F9FAFB]">Pressure Dial: How It Works</h2>
+          <h2 className="text-2xl font-bold text-[#111827]">Pressure Dial: How It Works</h2>
         </div>
 
         <div className="card-dark p-6 mb-6">
-          <h3 className="text-base font-bold text-[#F9FAFB] mb-3">Baseline: 85%</h3>
-          <p className="text-sm text-[#9CA3AF] mb-4">
+          <h3 className="text-base font-bold text-[#111827] mb-3">Baseline: 85%</h3>
+          <p className="text-sm text-[#6B7280] mb-4">
             The starting "extinction pressure" of 85% is an index representing the current state
             of cumulative anthropogenic pressure on biodiversity — derived from the IPBES assessment
             that established we are in the sixth mass extinction with extinction rates 1,000–10,000×
             above background. It is not a literal percentage of species at risk.
           </p>
-          <p className="text-sm text-[#9CA3AF]">
+          <p className="text-sm text-[#6B7280]">
             The floor (20%) represents the residual pressure that exists even under ideal governance —
             because some historical habitat loss is irreversible and climate change is already locked in
             to some degree.
@@ -103,8 +103,8 @@ export function MethodologyPage() {
         </div>
 
         <div className="card-dark p-6 mb-6">
-          <h3 className="text-base font-bold text-[#F9FAFB] mb-4">Governance Lever Percentages</h3>
-          <p className="text-sm text-[#9CA3AF] mb-4">
+          <h3 className="text-base font-bold text-[#111827] mb-4">Governance Lever Percentages</h3>
+          <p className="text-sm text-[#6B7280] mb-4">
             The impact percentages for each governance lever are indicative estimates based on the
             literature, not precise calculations. They are designed to illustrate the relative
             importance of each intervention:
@@ -117,21 +117,21 @@ export function MethodologyPage() {
               { lever: 'Subsidy Reform (−15%)', basis: 'FAO estimates $540B/year in agricultural subsidies globally, much supporting intensification. Redirecting even half toward sustainable practices could significantly reduce pressure.' },
               { lever: 'AI Governance Conditions (−20%)', basis: 'If AI efficiency gains were redirected from volume expansion to footprint reduction, the rebound effect is neutralised. IPBES scenario modelling suggests this is comparable in impact to supply chain reform.' },
             ].map((item, i) => (
-              <div key={i} className="p-4 bg-white/5 rounded-lg">
+              <div key={i} className="p-4 bg-gray-50 rounded-lg">
                 <p className="text-sm font-bold text-[#F59E0B] mb-1">{item.lever}</p>
-                <p className="text-sm text-[#9CA3AF]">{item.basis}</p>
+                <p className="text-sm text-[#6B7280]">{item.basis}</p>
               </div>
             ))}
           </div>
         </div>
 
         <div className="card-dark p-6">
-          <h3 className="text-base font-bold text-[#F9FAFB] mb-3">Extinction Risk Scenarios</h3>
-          <p className="text-sm text-[#9CA3AF] mb-3">
+          <h3 className="text-base font-bold text-[#111827] mb-3">Extinction Risk Scenarios</h3>
+          <p className="text-sm text-[#6B7280] mb-3">
             The "Uncapped Efficiency" and "Capped Expansion" scenarios are adapted from the IPBES
             regional rivalry and global sustainability scenarios respectively (Science Journal, 2024).
           </p>
-          <p className="text-sm text-[#9CA3AF]">
+          <p className="text-sm text-[#6B7280]">
             The 2025–2075 projected timeline uses IPBES language ("within decades", "1 in 4 species
             by 2075 without intervention") and represents the scientific consensus range, not a precise
             forecast. Timeline events like "AI adoption accelerates" are editorial judgements about
@@ -146,12 +146,12 @@ export function MethodologyPage() {
           <div className="w-10 h-10 rounded-lg bg-[#3B82F6]/20 flex items-center justify-center">
             <Database className="w-5 h-5 text-[#3B82F6]" />
           </div>
-          <h2 className="text-2xl font-bold text-[#F9FAFB]">Data Sources: What We Used and Why</h2>
+          <h2 className="text-2xl font-bold text-[#111827]">Data Sources: What We Used and Why</h2>
         </div>
 
         <div className="card-dark p-6 mb-6">
-          <h3 className="text-base font-bold text-[#F9FAFB] mb-3">Primary Sources</h3>
-          <p className="text-sm text-[#9CA3AF]">
+          <h3 className="text-base font-bold text-[#111827] mb-3">Primary Sources</h3>
+          <p className="text-sm text-[#6B7280]">
             All statistics on this site are drawn from peer-reviewed publications or authoritative
             conservation organisations (IPBES, IUCN, WWF, FAO). We do not use secondary press
             sources for core statistics. Where a statistic appears in a secondary source, we trace
@@ -160,7 +160,7 @@ export function MethodologyPage() {
         </div>
 
         <div className="space-y-4">
-          <h3 className="text-base font-bold text-[#F9FAFB]">Full Bibliography</h3>
+          <h3 className="text-base font-bold text-[#111827]">Full Bibliography</h3>
           {fullBibliography.map((ref, i) => (
             <div key={i} className="card-dark p-4">
               <div className="flex items-start gap-3">
@@ -168,7 +168,7 @@ export function MethodologyPage() {
                   {ref.ref}
                 </span>
                 <div>
-                  <p className="text-sm text-[#9CA3AF]">{ref.full}</p>
+                  <p className="text-sm text-[#6B7280]">{ref.full}</p>
                   <a
                     href={ref.url}
                     target="_blank"
@@ -186,8 +186,8 @@ export function MethodologyPage() {
         <div className="mt-8 p-5 bg-[#F59E0B]/10 border border-[#F59E0B]/20 rounded-lg">
           <div className="flex items-start gap-3">
             <BookOpen className="w-5 h-5 text-[#F59E0B] flex-shrink-0 mt-0.5" />
-            <p className="text-sm text-[#9CA3AF]">
-              <span className="text-[#F9FAFB] font-medium">Corrections welcome. </span>
+            <p className="text-sm text-[#6B7280]">
+              <span className="text-[#111827] font-medium">Corrections welcome. </span>
               If you find a statistic we have attributed incorrectly, a source that has been updated,
               or a calculation error, please use the{' '}
               <a href="/suggest" className="text-[#3B82F6] hover:underline">Suggest tab</a> to flag it.

@@ -126,7 +126,7 @@ export function AssessmentSection() {
   return (
     <div
       ref={sectionRef}
-      className="relative w-full min-h-screen bg-[#0B0F17] py-20 lg:py-32"
+      className="relative w-full min-h-screen bg-[#F8FAFF] py-20 lg:py-32"
     >
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-5">
@@ -144,19 +144,19 @@ export function AssessmentSection() {
               isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
             }`}
           >
-            <h2 className="font-display font-bold text-4xl lg:text-5xl text-[#F2F5FA] mb-6">
+            <h2 className="font-display font-bold text-4xl lg:text-5xl text-[#0F1729] mb-6">
               QUICK ASSESSMENT
             </h2>
-            <p className="text-[#A7B1C8] text-base leading-relaxed mb-8">
+            <p className="text-[#4B5563] text-base leading-relaxed mb-8">
               Answer six questions to see where your AI use case sits on the clock—and what to do next.
             </p>
 
             {/* Progress Indicator */}
             <div className="flex items-center gap-2 mb-4">
-              <span className="font-mono text-sm text-[#A7B1C8]">
+              <span className="font-mono text-sm text-[#4B5563]">
                 {Object.values(answers).filter((a) => a !== null).length} / {questions.length}
               </span>
-              <div className="flex-1 h-1 bg-white/10 rounded-full overflow-hidden">
+              <div className="flex-1 h-1 bg-gray-100 rounded-full overflow-hidden">
                 <div
                   className="h-full bg-[#FF6A3D] transition-all duration-500"
                   style={{
@@ -170,7 +170,7 @@ export function AssessmentSection() {
             <div className="card-sharp p-4 mt-8">
               <div className="flex items-start gap-3">
                 <AlertCircle className="w-5 h-5 text-[#FF6A3D] flex-shrink-0 mt-0.5" />
-                <p className="text-xs text-[#A7B1C8]">
+                <p className="text-xs text-[#4B5563]">
                   This assessment is for educational purposes. For comprehensive risk evaluation, consult with AI ethics and animal welfare experts.
                 </p>
               </div>
@@ -189,17 +189,17 @@ export function AssessmentSection() {
                 {questions.map((question, index) => (
                   <div
                     key={question.id}
-                    className={`p-4 border border-white/10 hover:border-white/20 transition-all duration-300 ${
+                    className={`p-4 border border-gray-200 hover:border-gray-200 transition-all duration-300 ${
                       answers[question.id] === true ? 'bg-[#FF6A3D]/10 border-[#FF6A3D]/30' : ''
-                    } ${answers[question.id] === false ? 'bg-white/5' : ''}`}
+                    } ${answers[question.id] === false ? 'bg-gray-50' : ''}`}
                     style={{ animationDelay: `${index * 50}ms` }}
                   >
                     <div className="flex items-start justify-between gap-4">
                       <div className="flex items-start gap-4">
-                        <span className="font-mono text-sm text-[#A7B1C8] flex-shrink-0">
+                        <span className="font-mono text-sm text-[#4B5563] flex-shrink-0">
                           {String(question.id).padStart(2, '0')}
                         </span>
-                        <p className="text-[#F2F5FA] text-sm lg:text-base">
+                        <p className="text-[#0F1729] text-sm lg:text-base">
                           {question.text}
                         </p>
                       </div>
@@ -209,7 +209,7 @@ export function AssessmentSection() {
                           className={`w-8 h-8 flex items-center justify-center border transition-all duration-300 ${
                             answers[question.id] === true
                               ? 'bg-[#FF6A3D] border-[#FF6A3D] text-white'
-                              : 'border-white/20 text-[#A7B1C8] hover:border-[#FF6A3D]/50'
+                              : 'border-gray-200 text-[#4B5563] hover:border-[#FF6A3D]/50'
                           }`}
                         >
                           <Check className="w-4 h-4" />
@@ -218,8 +218,8 @@ export function AssessmentSection() {
                           onClick={() => handleAnswer(question.id, false)}
                           className={`w-8 h-8 flex items-center justify-center border transition-all duration-300 ${
                             answers[question.id] === false
-                              ? 'bg-white/20 border-white/40 text-white'
-                              : 'border-white/20 text-[#A7B1C8] hover:border-white/40'
+                              ? 'bg-gray-200 border-gray-300 text-[#111827]'
+                              : 'border-gray-200 text-[#4B5563] hover:border-gray-300'
                           }`}
                         >
                           <X className="w-4 h-4" />
@@ -238,22 +238,22 @@ export function AssessmentSection() {
                   <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4">
                     <div>
                       <div className="flex items-center gap-3 mb-2">
-                        <span className="font-mono text-sm text-[#A7B1C8]">Your score:</span>
-                        <span className="font-display font-bold text-2xl text-[#F2F5FA]">
+                        <span className="font-mono text-sm text-[#4B5563]">Your score:</span>
+                        <span className="font-display font-bold text-2xl text-[#0F1729]">
                           {score}/{questions.length}
                         </span>
                         <span className={`font-display font-bold text-lg ${result.color}`}>
                           {result.stageName}
                         </span>
                       </div>
-                      <p className="text-sm text-[#F2F5FA]/80">
+                      <p className="text-sm text-[#0F1729]/80">
                         Next steps: {result.actions.join(' • ')}
                       </p>
                     </div>
                     <div className="flex items-center gap-3">
                       <button
                         onClick={resetAssessment}
-                        className="flex items-center gap-2 px-4 py-2 border border-white/20 text-[#A7B1C8] hover:text-[#F2F5FA] hover:border-white/40 transition-all"
+                        className="flex items-center gap-2 px-4 py-2 border border-gray-200 text-[#4B5563] hover:text-[#0F1729] hover:border-gray-300 transition-all"
                       >
                         <RefreshCw className="w-4 h-4" />
                         <span>Reset</span>

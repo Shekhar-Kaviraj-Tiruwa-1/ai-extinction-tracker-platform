@@ -97,13 +97,13 @@ const tabCards = [
     icon: MessageSquare,
     title: 'Suggest',
     description: 'Found a data error, a missing species, or new research? Tell us.',
-    color: '#9CA3AF',
+    color: '#6B7280',
   },
 ];
 
 export function HomePage() {
   return (
-    <div className="min-h-screen bg-[#0D1B0F]">
+    <div className="min-h-screen bg-[#F7FFF7]">
       {/* Hero / Pathway Diagram */}
       <HeroSection />
 
@@ -113,19 +113,19 @@ export function HomePage() {
           <span className="inline-block px-3 py-1 text-xs font-mono uppercase tracking-widest text-[#EF4444] bg-[#EF4444]/10 rounded-full mb-4">
             The Core Idea
           </span>
-          <h2 className="text-3xl lg:text-4xl font-bold text-[#F9FAFB] mb-6">
+          <h2 className="text-3xl lg:text-4xl font-bold text-[#111827] mb-6">
             What is AI Extinction Clock?
           </h2>
-          <p className="text-lg text-[#9CA3AF] leading-relaxed mb-6">
-            Right now, about <span className="text-[#F9FAFB] font-semibold">1 million species</span> are at risk of disappearing — many within our lifetime.
-            The main driver is not pollution or climate change alone. It is <span className="text-[#F9FAFB] font-semibold">habitat destruction</span>, mostly from farming land cleared to raise animals or grow feed for them.
+          <p className="text-lg text-[#6B7280] leading-relaxed mb-6">
+            Right now, about <span className="text-[#111827] font-semibold">1 million species</span> are at risk of disappearing — many within our lifetime.
+            The main driver is not pollution or climate change alone. It is <span className="text-[#111827] font-semibold">habitat destruction</span>, mostly from farming land cleared to raise animals or grow feed for them.
           </p>
-          <p className="text-lg text-[#9CA3AF] leading-relaxed mb-6">
+          <p className="text-lg text-[#6B7280] leading-relaxed mb-6">
             A newer force is making this worse: <span className="text-[#EF4444] font-semibold">artificial intelligence</span>. AI is not causing extinctions directly.
             But it is making industrial animal farming dramatically more efficient — which means bigger operations, more land cleared, more water used, and faster habitat destruction.
           </p>
-          <p className="text-lg text-[#9CA3AF] leading-relaxed">
-            AI Extinction Clock tracks this connection. We use peer-reviewed data to map the chain from <span className="text-[#F9FAFB]">AI adoption → industrial efficiency → agricultural expansion → habitat loss → species extinction</span>.
+          <p className="text-lg text-[#6B7280] leading-relaxed">
+            AI Extinction Clock tracks this connection. We use peer-reviewed data to map the chain from <span className="text-[#111827]">AI adoption → industrial efficiency → agricultural expansion → habitat loss → species extinction</span>.
             Then we show what governance and individual action can do about it.
           </p>
         </div>
@@ -145,7 +145,7 @@ export function HomePage() {
           ].map((item, i) => (
             <span
               key={i}
-              className={item.label === '→' ? 'text-[#6B7280]' : 'px-3 py-1 rounded-md bg-white/5'}
+              className={item.label === '→' ? 'text-[#6B7280]' : 'px-3 py-1 rounded-md bg-gray-50'}
               style={{ color: item.color }}
             >
               {item.label}
@@ -155,9 +155,9 @@ export function HomePage() {
       </section>
 
       {/* Key Statistics */}
-      <section className="section-padding bg-[#162617]/40">
+      <section className="section-padding bg-[#EEF7EE]/40">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-2xl font-bold text-[#F9FAFB] mb-8 text-center">
+          <h2 className="text-2xl font-bold text-[#111827] mb-8 text-center">
             The Numbers at a Glance
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -171,9 +171,9 @@ export function HomePage() {
                     </div>
                   </div>
                   <div className="text-3xl font-bold font-mono mb-1" style={{ color: s.color }}>{s.stat}</div>
-                  <div className="text-sm font-semibold text-[#F9FAFB] mb-2">{s.label}</div>
-                  <p className="text-sm text-[#9CA3AF] mb-3">{s.detail}</p>
-                  <p className="text-xs text-[#9CA3AF]/60 font-mono">{s.source}</p>
+                  <div className="text-sm font-semibold text-[#111827] mb-2">{s.label}</div>
+                  <p className="text-sm text-[#6B7280] mb-3">{s.detail}</p>
+                  <p className="text-xs text-[#6B7280]/60 font-mono">{s.source}</p>
                 </div>
               );
             })}
@@ -192,8 +192,8 @@ export function HomePage() {
 
       {/* Explore the Site */}
       <section className="section-padding max-w-7xl mx-auto">
-        <h2 className="text-2xl font-bold text-[#F9FAFB] mb-2">Explore the Site</h2>
-        <p className="text-[#9CA3AF] mb-8">Each tab goes deeper into a different part of the story.</p>
+        <h2 className="text-2xl font-bold text-[#111827] mb-2">Explore the Site</h2>
+        <p className="text-[#6B7280] mb-8">Each tab goes deeper into a different part of the story.</p>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
           {tabCards.map((card) => {
             const Icon = card.icon;
@@ -201,7 +201,7 @@ export function HomePage() {
               <Link
                 key={card.path}
                 to={card.path}
-                className="card-dark p-5 group hover:border-white/20 transition-all duration-300"
+                className="card-dark p-5 group hover:border-gray-300 transition-all duration-300"
               >
                 <div
                   className="w-10 h-10 rounded-lg flex items-center justify-center mb-4"
@@ -209,10 +209,10 @@ export function HomePage() {
                 >
                   <Icon className="w-5 h-5" style={{ color: card.color }} />
                 </div>
-                <h3 className="text-sm font-bold text-[#F9FAFB] mb-2 group-hover:text-[#EF4444] transition-colors">
+                <h3 className="text-sm font-bold text-[#111827] mb-2 group-hover:text-[#EF4444] transition-colors">
                   {card.title}
                 </h3>
-                <p className="text-xs text-[#9CA3AF] leading-relaxed">{card.description}</p>
+                <p className="text-xs text-[#6B7280] leading-relaxed">{card.description}</p>
               </Link>
             );
           })}
@@ -220,11 +220,11 @@ export function HomePage() {
       </section>
 
       {/* Bottom CTA */}
-      <section className="section-padding border-t border-white/5">
+      <section className="section-padding border-t border-gray-200">
         <div className="max-w-2xl mx-auto text-center">
-          <p className="text-[#9CA3AF] text-sm">
+          <p className="text-[#6B7280] text-sm">
             All data sourced from{' '}
-            <span className="text-[#F9FAFB]">IPBES, IUCN, WWF, FAO</span> and peer-reviewed research.
+            <span className="text-[#111827]">IPBES, IUCN, WWF, FAO</span> and peer-reviewed research.
             This site traces a plausible causal chain — not a direct causal proof.{' '}
             <Link to="/methodology" className="text-[#3B82F6] hover:underline">
               Read the methodology.

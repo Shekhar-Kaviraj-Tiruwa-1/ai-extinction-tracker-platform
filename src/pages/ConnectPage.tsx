@@ -51,17 +51,17 @@ export function ConnectPage() {
 
   if (submitted) {
     return (
-      <div className="min-h-screen bg-[#0D1B0F] flex items-center justify-center section-padding">
+      <div className="min-h-screen bg-[#F7FFF7] flex items-center justify-center section-padding">
         <div className="card-dark p-10 max-w-md w-full text-center">
           <CheckCircle className="w-16 h-16 text-[#8B5CF6] mx-auto mb-4" />
-          <h2 className="text-2xl font-bold text-[#F9FAFB] mb-2">Message received</h2>
-          <p className="text-[#9CA3AF] mb-6">
+          <h2 className="text-2xl font-bold text-[#111827] mb-2">Message received</h2>
+          <p className="text-[#6B7280] mb-6">
             Thank you for reaching out. We review all messages and will follow up
             where we can.
           </p>
           <button
             onClick={() => { setSubmitted(false); setForm({ name: '', role: '', type: '', message: '' }); }}
-            className="px-6 py-2 text-sm font-medium text-[#F9FAFB] bg-white/10 rounded-lg hover:bg-white/15 transition-colors"
+            className="px-6 py-2 text-sm font-medium text-[#111827] bg-gray-100 rounded-lg hover:bg-gray-200 transition-colors"
           >
             Send another message
           </button>
@@ -71,16 +71,16 @@ export function ConnectPage() {
   }
 
   return (
-    <div className="min-h-screen bg-[#0D1B0F]">
+    <div className="min-h-screen bg-[#F7FFF7]">
       {/* Header */}
       <div className="section-padding pb-0 max-w-2xl mx-auto">
         <span className="inline-block px-3 py-1 text-xs font-mono uppercase tracking-widest text-[#8B5CF6] bg-[#8B5CF6]/10 rounded-full mb-4">
           Get Involved
         </span>
-        <h1 className="text-4xl lg:text-5xl font-bold text-[#F9FAFB] mb-4">
+        <h1 className="text-4xl lg:text-5xl font-bold text-[#111827] mb-4">
           Connect
         </h1>
-        <p className="text-lg text-[#9CA3AF]">
+        <p className="text-lg text-[#6B7280]">
           AI Extinction Clock improves through expert input. If you have data to contribute,
           findings to share, or want to collaborate — send a message below.
         </p>
@@ -95,9 +95,9 @@ export function ConnectPage() {
               <div key={i} className="card-dark p-4">
                 <div className="flex items-center gap-2 mb-1">
                   <Icon className="w-4 h-4 text-[#8B5CF6]" />
-                  <p className="text-sm font-bold text-[#F9FAFB]">{item.label}</p>
+                  <p className="text-sm font-bold text-[#111827]">{item.label}</p>
                 </div>
-                <p className="text-xs text-[#9CA3AF]">{item.example}</p>
+                <p className="text-xs text-[#6B7280]">{item.example}</p>
               </div>
             );
           })}
@@ -109,40 +109,40 @@ export function ConnectPage() {
         <form onSubmit={handleSubmit} className="space-y-5">
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
             <div>
-              <label className="block text-sm font-medium text-[#F9FAFB] mb-2">Name (optional)</label>
+              <label className="block text-sm font-medium text-[#111827] mb-2">Name (optional)</label>
               <input
                 type="text"
                 value={form.name}
                 onChange={(e) => setForm({ ...form, name: e.target.value })}
                 placeholder="Your name"
-                className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-lg text-[#F9FAFB] placeholder:text-[#9CA3AF]/50 focus:outline-none focus:border-[#8B5CF6]/50 transition-colors text-sm"
+                className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-lg text-[#111827] placeholder:text-[#6B7280]/50 focus:outline-none focus:border-[#8B5CF6]/50 transition-colors text-sm"
               />
             </div>
             <div>
-              <label className="block text-sm font-medium text-[#F9FAFB] mb-2">Role / field (optional)</label>
+              <label className="block text-sm font-medium text-[#111827] mb-2">Role / field (optional)</label>
               <input
                 type="text"
                 value={form.role}
                 onChange={(e) => setForm({ ...form, role: e.target.value })}
                 placeholder="e.g. Conservation biologist"
-                className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-lg text-[#F9FAFB] placeholder:text-[#9CA3AF]/50 focus:outline-none focus:border-[#8B5CF6]/50 transition-colors text-sm"
+                className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-lg text-[#111827] placeholder:text-[#6B7280]/50 focus:outline-none focus:border-[#8B5CF6]/50 transition-colors text-sm"
               />
             </div>
           </div>
 
           <div>
-            <label className="block text-sm font-medium text-[#F9FAFB] mb-2">
+            <label className="block text-sm font-medium text-[#111827] mb-2">
               How do you want to connect? <span className="text-[#8B5CF6]">*</span>
             </label>
             <select
               required
               value={form.type}
               onChange={(e) => setForm({ ...form, type: e.target.value as ConnectionType })}
-              className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-lg text-[#F9FAFB] focus:outline-none focus:border-[#8B5CF6]/50 transition-colors text-sm appearance-none"
+              className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-lg text-[#111827] focus:outline-none focus:border-[#8B5CF6]/50 transition-colors text-sm appearance-none"
             >
-              <option value="" disabled className="bg-[#0D1B0F]">Select a type...</option>
+              <option value="" disabled className="bg-[#F7FFF7]">Select a type...</option>
               {connectionTypes.map((t) => (
-                <option key={t.value} value={t.value} className="bg-[#0D1B0F]">
+                <option key={t.value} value={t.value} className="bg-[#F7FFF7]">
                   {t.label}
                 </option>
               ))}
@@ -150,7 +150,7 @@ export function ConnectPage() {
           </div>
 
           <div>
-            <label className="block text-sm font-medium text-[#F9FAFB] mb-2">
+            <label className="block text-sm font-medium text-[#111827] mb-2">
               Your message <span className="text-[#8B5CF6]">*</span>
             </label>
             <textarea
@@ -159,7 +159,7 @@ export function ConnectPage() {
               value={form.message}
               onChange={(e) => setForm({ ...form, message: e.target.value })}
               placeholder="Tell us what you'd like to contribute or discuss..."
-              className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-lg text-[#F9FAFB] placeholder:text-[#9CA3AF]/50 focus:outline-none focus:border-[#8B5CF6]/50 transition-colors text-sm resize-none"
+              className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-lg text-[#111827] placeholder:text-[#6B7280]/50 focus:outline-none focus:border-[#8B5CF6]/50 transition-colors text-sm resize-none"
             />
           </div>
 
@@ -173,7 +173,7 @@ export function ConnectPage() {
           </button>
         </form>
 
-        <p className="mt-6 text-xs text-[#9CA3AF]/60">
+        <p className="mt-6 text-xs text-[#6B7280]/60">
           All messages are reviewed manually. This site is a living resource — expert input
           directly shapes what gets added or corrected.
         </p>

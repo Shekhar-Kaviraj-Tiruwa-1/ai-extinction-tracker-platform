@@ -6,27 +6,27 @@
 
 @layer base {
   :root {
-    --background: 125 35% 8%;
-    --background-secondary: 125 30% 12%;
-    --foreground: 120 20% 97%;
-    --foreground-secondary: 120 10% 65%;
+    --background: 120 30% 98%;
+    --background-secondary: 120 20% 94%;
+    --foreground: 120 25% 10%;
+    --foreground-secondary: 120 10% 35%;
     --accent: 0 84% 60%;
     --accent-secondary: 38 92% 50%;
-    --success: 142 71% 45%;
-    --warning: 38 92% 50%;
+    --success: 142 71% 38%;
+    --warning: 38 92% 45%;
     --danger: 0 84% 60%;
-    --card: 125 28% 11%;
-    --card-foreground: 120 20% 97%;
-    --popover: 125 28% 11%;
-    --popover-foreground: 120 20% 97%;
+    --card: 0 0% 100%;
+    --card-foreground: 120 25% 10%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 120 25% 10%;
     --primary: 0 84% 60%;
-    --primary-foreground: 120 20% 97%;
-    --secondary: 125 22% 14%;
-    --secondary-foreground: 120 20% 97%;
-    --muted: 125 22% 14%;
-    --muted-foreground: 120 10% 58%;
-    --border: 125 18% 18%;
-    --input: 125 18% 18%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 120 15% 92%;
+    --secondary-foreground: 120 25% 10%;
+    --muted: 120 10% 92%;
+    --muted-foreground: 120 5% 45%;
+    --border: 120 10% 85%;
+    --input: 120 10% 85%;
     --ring: 0 84% 60%;
     --radius: 8px;
   }
@@ -42,7 +42,7 @@
   }
   
   body {
-    @apply bg-[#0D1B0F] text-[#F9FAFB] antialiased;
+    @apply bg-[#F7FFF7] text-[#111827] antialiased;
     font-family: 'Inter', sans-serif;
   }
 }
@@ -53,16 +53,16 @@
   }
   
   .text-gradient {
-    background: linear-gradient(135deg, #F9FAFB 0%, #4ADE80 40%, #EF4444 100%);
+    background: linear-gradient(135deg, #111827 0%, #16A34A 40%, #EF4444 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
   }
-  
+
   .card-dark {
-    background: rgba(20, 38, 22, 0.88);
+    background: rgba(255, 255, 255, 0.92);
     backdrop-filter: blur(12px);
-    border: 1px solid rgba(120, 180, 100, 0.12);
+    border: 1px solid rgba(120, 180, 100, 0.25);
     border-radius: 8px;
   }
   
@@ -105,7 +105,7 @@
   }
   
   .citation-badge {
-    @apply inline-flex items-center px-2 py-0.5 text-xs font-mono bg-white/5 text-[#9CA3AF] rounded;
+    @apply inline-flex items-center px-2 py-0.5 text-xs font-mono bg-gray-100 text-[#6B7280] rounded;
   }
   
   .stat-number {
@@ -133,20 +133,20 @@
 }
 
 ::-webkit-scrollbar-track {
-  background: #162617;
+  background: #F0F7F0;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: rgba(74, 222, 128, 0.25);
+  background: rgba(74, 222, 128, 0.4);
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: rgba(74, 222, 128, 0.45);
+  background: rgba(74, 222, 128, 0.65);
 }
 
 /* Selection */
 ::selection {
-  background: rgba(239, 68, 68, 0.3);
-  color: #F9FAFB;
+  background: rgba(239, 68, 68, 0.2);
+  color: #111827;
 }

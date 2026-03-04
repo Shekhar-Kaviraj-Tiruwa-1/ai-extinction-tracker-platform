@@ -49,7 +49,7 @@ export function AboutSection() {
           alt="Wildlife observer"
           className="w-full h-full object-cover"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-[#0B0F17]/95 via-[#0B0F17]/80 to-[#0B0F17]/70" />
+        <div className="absolute inset-0 bg-gradient-to-r from-white/90 via-white/70 to-white/50" />
       </div>
 
       {/* Content */}
@@ -58,7 +58,7 @@ export function AboutSection() {
           {/* Left: Main Content */}
           <div className="lg:w-2/3">
             <h2
-              className={`font-display font-bold text-4xl lg:text-5xl xl:text-6xl text-[#F2F5FA] mb-8 leading-tight transition-all duration-700 ${
+              className={`font-display font-bold text-4xl lg:text-5xl xl:text-6xl text-[#0F1729] mb-8 leading-tight transition-all duration-700 ${
                 isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
               }`}
             >
@@ -70,13 +70,13 @@ export function AboutSection() {
                 isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
               }`}
             >
-              <p className="text-[#A7B1C8] text-base lg:text-lg leading-relaxed">
+              <p className="text-[#4B5563] text-base lg:text-lg leading-relaxed">
                 AI systems increasingly decide what happens to animals—yet most frameworks ignore them. 
                 From farm automation to wildlife monitoring, these technologies can amplify harms like 
                 exploitation, intensified farming, and invasive surveillance.
               </p>
 
-              <p className="text-[#A7B1C8] text-base lg:text-lg leading-relaxed">
+              <p className="text-[#4B5563] text-base lg:text-lg leading-relaxed">
                 This project maps risk, surfaces case studies, and gives practitioners tools to act early. 
                 By identifying intervention points before harms become irreversible, we can build AI systems 
                 that respect the interests and wellbeing of all sentient beings.
@@ -88,7 +88,7 @@ export function AboutSection() {
                 isVisible ? 'opacity-100' : 'opacity-0'
               }`}
             >
-              <span className="font-mono text-xs tracking-wider text-[#A7B1C8]">
+              <span className="font-mono text-xs tracking-wider text-[#4B5563]">
                 Built for interdisciplinary impact.
               </span>
             </div>
@@ -103,14 +103,14 @@ export function AboutSection() {
             <div className="card-sharp p-6 lg:p-8 space-y-8">
               {/* Audience */}
               <div>
-                <h3 className="font-display font-bold text-lg text-[#F2F5FA] mb-4">
+                <h3 className="font-display font-bold text-lg text-[#0F1729] mb-4">
                   Audience
                 </h3>
                 <div className="flex flex-wrap gap-2">
                   {audiences.map((audience) => (
                     <span
                       key={audience}
-                      className="px-3 py-1.5 bg-white/5 text-[#A7B1C8] text-sm"
+                      className="px-3 py-1.5 bg-gray-50 text-[#4B5563] text-sm"
                     >
                       {audience}
                     </span>
@@ -119,11 +119,11 @@ export function AboutSection() {
               </div>
 
               {/* Divider */}
-              <div className="h-px bg-white/10" />
+              <div className="h-px bg-gray-100" />
 
               {/* Principles */}
               <div>
-                <h3 className="font-display font-bold text-lg text-[#F2F5FA] mb-4">
+                <h3 className="font-display font-bold text-lg text-[#0F1729] mb-4">
                   Principles
                 </h3>
                 <div className="grid grid-cols-2 gap-3">
@@ -132,7 +132,7 @@ export function AboutSection() {
                     return (
                       <div
                         key={principle.label}
-                        className="flex items-center gap-2 text-[#A7B1C8]"
+                        className="flex items-center gap-2 text-[#4B5563]"
                       >
                         <Icon className="w-4 h-4 text-[#FF6A3D]" />
                         <span className="text-sm">{principle.label}</span>
@@ -143,11 +143,11 @@ export function AboutSection() {
               </div>
 
               {/* Divider */}
-              <div className="h-px bg-white/10" />
+              <div className="h-px bg-gray-100" />
 
               {/* Mission Statement */}
               <div>
-                <p className="text-sm text-[#A7B1C8] italic">
+                <p className="text-sm text-[#4B5563] italic">
                   "The question is not whether AI will affect animals, but whether we will 
                   choose to govern it before the harms become locked in."
                 </p>

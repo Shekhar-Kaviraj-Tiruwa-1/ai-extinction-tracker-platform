@@ -64,7 +64,7 @@ export function ExtinctionRisk() {
   return (
     <div
       ref={sectionRef}
-      className="relative w-full bg-[#0D1B0F] section-padding"
+      className="relative w-full bg-[#F7FFF7] section-padding"
     >
       {/* Background Image */}
       <div className="absolute inset-0">
@@ -73,7 +73,7 @@ export function ExtinctionRisk() {
           alt="Extinction visualization"
           className="w-full h-full object-cover opacity-30"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-[#0D1B0F] via-[#0D1B0F]/80 to-[#0D1B0F]" />
+        <div className="absolute inset-0 bg-gradient-to-b from-[#F7FFF7] via-[#F7FFF7]/80 to-[#F7FFF7]" />
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto">
@@ -83,10 +83,10 @@ export function ExtinctionRisk() {
             isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
           }`}
         >
-          <h2 className="text-3xl lg:text-5xl font-bold text-[#F9FAFB] mb-4">
+          <h2 className="text-3xl lg:text-5xl font-bold text-[#111827] mb-4">
             What This Means for Extinction Risk
           </h2>
-          <p className="text-lg text-[#9CA3AF] max-w-2xl">
+          <p className="text-lg text-[#6B7280] max-w-2xl">
             AI acts as a catalyst on known extinction drivers. Without governance, efficiency gains translate to expanded production and accelerated habitat loss.
           </p>
         </div>
@@ -97,13 +97,13 @@ export function ExtinctionRisk() {
             isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
           }`}
         >
-          <div className="inline-flex p-1 bg-white/5 rounded-lg">
+          <div className="inline-flex p-1 bg-gray-50 rounded-lg">
             <button
               onClick={() => setActiveScenario('uncapped')}
               className={`px-6 py-3 rounded-md text-sm font-medium transition-all ${
                 activeScenario === 'uncapped'
                   ? 'bg-[#EF4444] text-white'
-                  : 'text-[#9CA3AF] hover:text-[#F9FAFB]'
+                  : 'text-[#6B7280] hover:text-[#111827]'
               }`}
             >
               <div className="flex items-center gap-2">
@@ -116,7 +116,7 @@ export function ExtinctionRisk() {
               className={`px-6 py-3 rounded-md text-sm font-medium transition-all ${
                 activeScenario === 'capped'
                   ? 'bg-[#10B981] text-white'
-                  : 'text-[#9CA3AF] hover:text-[#F9FAFB]'
+                  : 'text-[#6B7280] hover:text-[#111827]'
               }`}
             >
               <div className="flex items-center gap-2">
@@ -138,15 +138,15 @@ export function ExtinctionRisk() {
               <h3 className="text-xl font-bold" style={{ color: currentScenario.color }}>
                 {currentScenario.name}
               </h3>
-              <p className="text-sm text-[#9CA3AF]">{currentScenario.description}</p>
+              <p className="text-sm text-[#6B7280]">{currentScenario.description}</p>
             </div>
-            <Calendar className="w-6 h-6 text-[#9CA3AF]" />
+            <Calendar className="w-6 h-6 text-[#6B7280]" />
           </div>
 
           {/* Timeline Bar */}
           <div className="relative">
             {/* Base Line */}
-            <div className="absolute top-1/2 left-0 right-0 h-1 bg-white/10 -translate-y-1/2 rounded-full" />
+            <div className="absolute top-1/2 left-0 right-0 h-1 bg-gray-100 -translate-y-1/2 rounded-full" />
             
             {/* Progress Line */}
             <div
@@ -171,13 +171,13 @@ export function ExtinctionRisk() {
                     className="w-6 h-6 rounded-full border-4 transition-all duration-300"
                     style={{
                       borderColor: currentScenario.color,
-                      background: hoveredYear === index ? currentScenario.color : '#0D1B0F',
+                      background: hoveredYear === index ? currentScenario.color : '#F7FFF7',
                       boxShadow: hoveredYear === index ? `0 0 20px ${currentScenario.color}60` : 'none',
                     }}
                   />
                   
                   {/* Year Label */}
-                  <span className="mt-3 text-lg font-bold text-[#F9FAFB]">{milestone.year}</span>
+                  <span className="mt-3 text-lg font-bold text-[#111827]">{milestone.year}</span>
                   
                   {/* Detail Card */}
                   <div
@@ -188,7 +188,7 @@ export function ExtinctionRisk() {
                     <span className="text-xs font-mono" style={{ color: currentScenario.color }}>
                       {milestone.label}
                     </span>
-                    <p className="text-xs text-[#9CA3AF] mt-1">{milestone.detail}</p>
+                    <p className="text-xs text-[#6B7280] mt-1">{milestone.detail}</p>
                   </div>
                 </div>
               ))}
@@ -215,7 +215,7 @@ export function ExtinctionRisk() {
                 >
                   {milestone.label}
                 </div>
-                <p className="text-sm text-[#9CA3AF]">{milestone.detail}</p>
+                <p className="text-sm text-[#6B7280]">{milestone.detail}</p>
                 {index < currentScenario.milestones.length - 1 && (
                   <div
                     className="mt-3 text-xs font-mono"
@@ -237,11 +237,11 @@ export function ExtinctionRisk() {
         >
           {/* Event Timeline */}
           <div className="card-dark p-6">
-            <h3 className="text-lg font-bold text-[#F9FAFB] mb-4">Projected Timeline (2025-2075)</h3>
+            <h3 className="text-lg font-bold text-[#111827] mb-4">Projected Timeline (2025-2075)</h3>
             <div className="space-y-3">
               {timelineEvents.map((event) => (
                 <div key={event.year} className="flex items-center gap-4">
-                  <span className="text-sm font-mono text-[#9CA3AF] w-12">{event.year}</span>
+                  <span className="text-sm font-mono text-[#6B7280] w-12">{event.year}</span>
                   <div
                     className="w-2 h-2 rounded-full"
                     style={{
@@ -253,7 +253,7 @@ export function ExtinctionRisk() {
                           : '#7F1D1D',
                     }}
                   />
-                  <span className="text-sm text-[#F9FAFB]">{event.event}</span>
+                  <span className="text-sm text-[#111827]">{event.event}</span>
                 </div>
               ))}
             </div>
@@ -263,12 +263,12 @@ export function ExtinctionRisk() {
           <div className="card-dark p-6">
             <div className="flex items-start gap-3 mb-4">
               <AlertTriangle className="w-6 h-6 text-[#EF4444] flex-shrink-0" />
-              <h3 className="text-lg font-bold text-[#F9FAFB]">AI as Catalyst, Not Root Cause</h3>
+              <h3 className="text-lg font-bold text-[#111827]">AI as Catalyst, Not Root Cause</h3>
             </div>
-            <p className="text-sm text-[#9CA3AF] mb-4">
+            <p className="text-sm text-[#6B7280] mb-4">
               You won't find a single authoritative model saying "AI causes X more extinctions by 2075." What the evidence shows is:
             </p>
-            <ol className="space-y-2 text-sm text-[#9CA3AF]">
+            <ol className="space-y-2 text-sm text-[#6B7280]">
               <li className="flex items-start gap-2">
                 <span className="text-[#EF4444] font-bold">1.</span>
                 <span>Established drivers (habitat loss, climate change, pollution) are well-documented</span>

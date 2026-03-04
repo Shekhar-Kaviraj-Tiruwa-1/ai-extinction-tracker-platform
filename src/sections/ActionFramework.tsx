@@ -122,7 +122,7 @@ export function ActionFramework() {
   return (
     <div
       ref={sectionRef}
-      className="relative w-full bg-[#0D1B0F] section-padding"
+      className="relative w-full bg-[#F7FFF7] section-padding"
     >
       <div className="relative z-10 max-w-7xl mx-auto">
         {/* Section Header */}
@@ -131,10 +131,10 @@ export function ActionFramework() {
             isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
           }`}
         >
-          <h2 className="text-3xl lg:text-5xl font-bold text-[#F9FAFB] mb-4">
+          <h2 className="text-3xl lg:text-5xl font-bold text-[#111827] mb-4">
             What Can Be Done
           </h2>
-          <p className="text-lg text-[#9CA3AF] max-w-2xl">
+          <p className="text-lg text-[#6B7280] max-w-2xl">
             Practical, non-apocalyptic pathways for intervention across policy, technology governance, and market action.
           </p>
         </div>
@@ -147,7 +147,7 @@ export function ActionFramework() {
             return (
               <div
                 key={pillar.id}
-                className="card-dark p-6 transition-all duration-700 hover:border-white/20"
+                className="card-dark p-6 transition-all duration-700 hover:border-gray-300"
                 style={{
                   opacity: isVisible ? 1 : 0,
                   transform: isVisible ? 'translateY(0)' : 'translateY(20px)',
@@ -163,9 +163,9 @@ export function ActionFramework() {
                     <Icon className="w-6 h-6" style={{ color: pillar.color }} />
                   </div>
                   <div>
-                    <h3 className="text-xl font-bold text-[#F9FAFB]">{pillar.title}</h3>
+                    <h3 className="text-xl font-bold text-[#111827]">{pillar.title}</h3>
                     {pillar.sources.length > 0 && (
-                      <span className="text-xs text-[#9CA3AF] font-mono">
+                      <span className="text-xs text-[#6B7280] font-mono">
                         {pillar.sources.join('; ')}
                       </span>
                     )}
@@ -178,8 +178,8 @@ export function ActionFramework() {
                     <div key={i} className="flex items-start gap-3">
                       <ArrowRight className="w-4 h-4 mt-1 flex-shrink-0" style={{ color: pillar.color }} />
                       <div>
-                        <h4 className="text-sm font-medium text-[#F9FAFB]">{action.title}</h4>
-                        <p className="text-xs text-[#9CA3AF]">{action.description}</p>
+                        <h4 className="text-sm font-medium text-[#111827]">{action.title}</h4>
+                        <p className="text-xs text-[#6B7280]">{action.description}</p>
                       </div>
                     </div>
                   ))}
@@ -197,13 +197,13 @@ export function ActionFramework() {
         >
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
             <div>
-              <h3 className="text-2xl font-bold text-[#F9FAFB] mb-4">
+              <h3 className="text-2xl font-bold text-[#111827] mb-4">
                 The Core Principle: Efficiency Without Governance Is Not Enough
               </h3>
-              <p className="text-[#9CA3AF] mb-4">
+              <p className="text-[#6B7280] mb-4">
                 AI and automation can be powerful tools for reducing environmental impact—but only if we explicitly design them to do so. Without governance constraints, efficiency gains will be captured as increased production volume, not reduced footprint.
               </p>
-              <p className="text-[#9CA3AF]">
+              <p className="text-[#6B7280]">
                 The choice is not between technology and nature. The choice is between <span className="text-[#EF4444] font-medium">uncapped efficiency</span> (which accelerates extinction) and <span className="text-[#10B981] font-medium">governed efficiency</span> (which can genuinely reduce pressure on ecosystems).
               </p>
             </div>
@@ -234,10 +234,10 @@ export function ActionFramework() {
                     strokeDashoffset="110"
                   />
                   {/* Center text */}
-                  <text x="50" y="48" textAnchor="middle" fill="#F9FAFB" fontSize="8" fontWeight="bold">
+                  <text x="50" y="48" textAnchor="middle" fill="#111827" fontSize="8" fontWeight="bold">
                     CHOICE
                   </text>
-                  <text x="50" y="58" textAnchor="middle" fill="#9CA3AF" fontSize="5">
+                  <text x="50" y="58" textAnchor="middle" fill="#6B7280" fontSize="5">
                     matters
                   </text>
                 </svg>
@@ -252,7 +252,7 @@ export function ActionFramework() {
             isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
           }`}
         >
-          <h3 className="text-lg font-bold text-[#F9FAFB] mb-4">Key Resources</h3>
+          <h3 className="text-lg font-bold text-[#111827] mb-4">Key Resources</h3>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             {resources.map((resource, index) => (
               <a
@@ -260,17 +260,17 @@ export function ActionFramework() {
                 href={resource.link}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-start gap-3 p-4 bg-white/5 rounded-lg hover:bg-white/10 transition-colors group"
+                className="flex items-start gap-3 p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors group"
               >
-                <FileText className="w-5 h-5 text-[#9CA3AF] flex-shrink-0" />
+                <FileText className="w-5 h-5 text-[#6B7280] flex-shrink-0" />
                 <div className="flex-1">
                   <div className="flex items-center gap-2">
-                    <span className="text-sm font-medium text-[#F9FAFB] group-hover:text-[#3B82F6] transition-colors">
+                    <span className="text-sm font-medium text-[#111827] group-hover:text-[#3B82F6] transition-colors">
                       {resource.title}
                     </span>
-                    <ExternalLink className="w-3 h-3 text-[#9CA3AF] opacity-0 group-hover:opacity-100 transition-opacity" />
+                    <ExternalLink className="w-3 h-3 text-[#6B7280] opacity-0 group-hover:opacity-100 transition-opacity" />
                   </div>
-                  <p className="text-xs text-[#9CA3AF]">{resource.description}</p>
+                  <p className="text-xs text-[#6B7280]">{resource.description}</p>
                 </div>
               </a>
             ))}

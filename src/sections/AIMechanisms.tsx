@@ -78,7 +78,7 @@ export function AIMechanisms() {
   return (
     <div
       ref={sectionRef}
-      className="relative w-full bg-[#0D1B0F] section-padding"
+      className="relative w-full bg-[#F7FFF7] section-padding"
     >
       {/* Background Image */}
       <div className="absolute inset-0">
@@ -87,7 +87,7 @@ export function AIMechanisms() {
           alt="Industrial agriculture"
           className="w-full h-full object-cover opacity-20"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-[#0D1B0F] via-[#0D1B0F]/90 to-[#0D1B0F]" />
+        <div className="absolute inset-0 bg-gradient-to-b from-[#F7FFF7] via-[#F7FFF7]/90 to-[#F7FFF7]" />
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto">
@@ -97,10 +97,10 @@ export function AIMechanisms() {
             isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
           }`}
         >
-          <h2 className="text-3xl lg:text-5xl font-bold text-[#F9FAFB] mb-4">
+          <h2 className="text-3xl lg:text-5xl font-bold text-[#111827] mb-4">
             How AI Changes Animal Agriculture
           </h2>
-          <p className="text-lg text-[#9CA3AF] max-w-2xl">
+          <p className="text-lg text-[#6B7280] max-w-2xl">
             Three mechanisms by which artificial intelligence amplifies the scale and environmental impact of animal production
           </p>
         </div>
@@ -145,10 +145,10 @@ export function AIMechanisms() {
                   <span className="text-xs font-mono uppercase tracking-wider" style={{ color: card.color }}>
                     {card.subtitle}
                   </span>
-                  <h3 className="text-xl font-bold text-[#F9FAFB] mt-1 mb-2">
+                  <h3 className="text-xl font-bold text-[#111827] mt-1 mb-2">
                     {card.title}
                   </h3>
-                  <p className="text-sm text-[#9CA3AF]">{card.description}</p>
+                  <p className="text-sm text-[#6B7280]">{card.description}</p>
 
                   {/* Expand Indicator */}
                   <div className="flex items-center gap-2 mt-4 text-sm" style={{ color: card.color }}>
@@ -159,14 +159,14 @@ export function AIMechanisms() {
 
                 {/* Expanded Content */}
                 {isExpanded && (
-                  <div className="px-6 pb-6 border-t border-white/10 pt-4">
+                  <div className="px-6 pb-6 border-t border-gray-200 pt-4">
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
                       {/* Features */}
                       <div>
-                        <h4 className="text-sm font-bold text-[#F9FAFB] mb-3">Key Capabilities</h4>
+                        <h4 className="text-sm font-bold text-[#111827] mb-3">Key Capabilities</h4>
                         <ul className="space-y-2">
                           {card.features.map((feature, i) => (
-                            <li key={i} className="flex items-start gap-2 text-sm text-[#9CA3AF]">
+                            <li key={i} className="flex items-start gap-2 text-sm text-[#6B7280]">
                               <span className="w-1.5 h-1.5 rounded-full mt-1.5 flex-shrink-0" style={{ background: card.color }} />
                               {feature}
                             </li>
@@ -180,17 +180,17 @@ export function AIMechanisms() {
                           <div className="flex items-start gap-3">
                             <AlertCircle className="w-5 h-5 flex-shrink-0 mt-0.5" style={{ color: card.color }} />
                             <div>
-                              <h4 className="text-sm font-bold text-[#F9FAFB] mb-1">Extinction Linkage</h4>
-                              <p className="text-sm text-[#9CA3AF]">{card.extinctionLink}</p>
+                              <h4 className="text-sm font-bold text-[#111827] mb-1">Extinction Linkage</h4>
+                              <p className="text-sm text-[#6B7280]">{card.extinctionLink}</p>
                             </div>
                           </div>
                         </div>
 
                         {/* Sources */}
                         <div className="mt-4">
-                          <h4 className="text-xs font-bold text-[#9CA3AF] mb-2">FULL CITATIONS</h4>
+                          <h4 className="text-xs font-bold text-[#6B7280] mb-2">FULL CITATIONS</h4>
                           {card.sources.map((source, i) => (
-                            <p key={i} className="text-xs text-[#9CA3AF] font-mono">{source}</p>
+                            <p key={i} className="text-xs text-[#6B7280] font-mono">{source}</p>
                           ))}
                         </div>
                       </div>
@@ -213,11 +213,11 @@ export function AIMechanisms() {
               <AlertCircle className="w-6 h-6 text-[#EF4444]" />
             </div>
             <div>
-              <h3 className="text-lg font-bold text-[#F9FAFB] mb-2">
+              <h3 className="text-lg font-bold text-[#111827] mb-2">
                 The Core Problem: AI as Catalyst, Not Root Cause
               </h3>
-              <p className="text-[#9CA3AF]">
-                AI rarely creates demand by itself; it <span className="text-[#F9FAFB] font-medium">reduces friction</span>. When a system's main brake is cost, labor, or coordination, AI can remove that brake. The risk is a <span className="text-[#EF4444] font-medium">rebound effect</span>: efficiency gains lower per-unit resource use but increase total volume produced and consumed—unless strong governance constraints exist.
+              <p className="text-[#6B7280]">
+                AI rarely creates demand by itself; it <span className="text-[#111827] font-medium">reduces friction</span>. When a system's main brake is cost, labor, or coordination, AI can remove that brake. The risk is a <span className="text-[#EF4444] font-medium">rebound effect</span>: efficiency gains lower per-unit resource use but increase total volume produced and consumed—unless strong governance constraints exist.
               </p>
             </div>
           </div>

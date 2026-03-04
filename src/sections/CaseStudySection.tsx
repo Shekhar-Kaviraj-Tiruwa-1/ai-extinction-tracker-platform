@@ -58,7 +58,7 @@ export function CaseStudySection({
           alt={domain}
           className="w-full h-full object-cover"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-[#0B0F17] via-[#0B0F17]/60 to-[#0B0F17]/40" />
+        <div className="absolute inset-0 bg-gradient-to-t from-white/90 via-white/60 to-white/40" />
       </div>
 
       {/* Content */}
@@ -71,7 +71,7 @@ export function CaseStudySection({
               isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-6'
             }`}
           >
-            <span className="font-mono text-xs tracking-wider text-[#A7B1C8]">
+            <span className="font-mono text-xs tracking-wider text-[#4B5563]">
               CASE STUDY {caseNumber}
             </span>
           </div>
@@ -83,7 +83,7 @@ export function CaseStudySection({
             }`}
           >
             <div className={`inline-flex items-center gap-2 px-4 py-2 ${bgStageColor} border border-${stageColor.replace('stage-', 'stage-')}`}>
-              <span className="font-mono text-xs tracking-wider text-[#F2F5FA]">
+              <span className="font-mono text-xs tracking-wider text-[#0F1729]">
                 STAGE {stage}
               </span>
               <span className={`font-display font-bold text-sm ${stageColor}`}>
@@ -98,7 +98,7 @@ export function CaseStudySection({
               isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-6'
             }`}
           >
-            <span className="font-mono text-xs tracking-wider text-[#A7B1C8]">
+            <span className="font-mono text-xs tracking-wider text-[#4B5563]">
               {domain}
             </span>
           </div>
@@ -130,10 +130,10 @@ export function CaseStudySection({
               }`}
             >
               <div className="card-sharp p-6 lg:p-8">
-                <h3 className="font-display font-bold text-xl lg:text-2xl text-[#F2F5FA] mb-4">
+                <h3 className="font-display font-bold text-xl lg:text-2xl text-[#0F1729] mb-4">
                   {title}
                 </h3>
-                <p className="text-[#A7B1C8] text-sm leading-relaxed">
+                <p className="text-[#4B5563] text-sm leading-relaxed">
                   {description}
                 </p>
               </div>

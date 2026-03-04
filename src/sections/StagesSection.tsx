@@ -67,7 +67,7 @@ export function StagesSection() {
           alt="Aerial view of farm"
           className="w-full h-full object-cover"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-[#0B0F17]/90 via-[#0B0F17]/70 to-[#0B0F17]/80" />
+        <div className="absolute inset-0 bg-gradient-to-r from-white/85 via-white/60 to-white/70" />
       </div>
 
       {/* Content */}
@@ -75,7 +75,7 @@ export function StagesSection() {
         {/* Left: Stage List */}
         <div className="w-full lg:w-1/3 lg:pr-8 mb-12 lg:mb-0">
           <h2
-            className={`font-display font-bold text-3xl lg:text-4xl text-[#F2F5FA] mb-8 transition-all duration-700 ${
+            className={`font-display font-bold text-3xl lg:text-4xl text-[#0F1729] mb-8 transition-all duration-700 ${
               isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-12'
             }`}
           >
@@ -86,7 +86,7 @@ export function StagesSection() {
             {stages.map((stage, index) => (
               <div
                 key={stage.number}
-                className={`group flex items-center gap-4 p-4 border border-white/10 hover:border-[#FF6A3D]/50 transition-all duration-500 cursor-default ${
+                className={`group flex items-center gap-4 p-4 border border-gray-200 hover:border-[#FF6A3D]/50 transition-all duration-500 cursor-default ${
                   isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-12'
                 }`}
                 style={{ transitionDelay: `${(index + 1) * 100}ms` }}
@@ -95,10 +95,10 @@ export function StagesSection() {
                   {stage.number}
                 </span>
                 <div className="flex-1">
-                  <span className="font-display font-bold text-[#F2F5FA] group-hover:text-[#FF6A3D] transition-colors">
+                  <span className="font-display font-bold text-[#0F1729] group-hover:text-[#FF6A3D] transition-colors">
                     {stage.name}
                   </span>
-                  <span className="block text-xs text-[#A7B1C8] mt-1">
+                  <span className="block text-xs text-[#4B5563] mt-1">
                     {stage.description}
                   </span>
                 </div>
@@ -131,14 +131,14 @@ export function StagesSection() {
           }`}
         >
           <div className="card-sharp p-6 lg:p-8">
-            <h3 className="font-display font-bold text-xl text-[#F2F5FA] mb-4">
+            <h3 className="font-display font-bold text-xl text-[#0F1729] mb-4">
               HOW TO READ THE CLOCK
             </h3>
-            <p className="text-[#A7B1C8] text-sm leading-relaxed mb-6">
+            <p className="text-[#4B5563] text-sm leading-relaxed mb-6">
               Each stage marks a shift in scale, reversibility, and harm. 
               Move clockwise: risk escalates as AI systems become harder to stop or undo.
             </p>
-            <div className="flex items-center gap-4 text-xs font-mono text-[#A7B1C8]">
+            <div className="flex items-center gap-4 text-xs font-mono text-[#4B5563]">
               <div className="flex items-center gap-2">
                 <div className="w-2 h-2 rounded-full bg-[rgba(255,106,61,0.35)]" />
                 <span>Low</span>
@@ -166,7 +166,7 @@ export function StagesSection() {
           isVisible ? 'opacity-100' : 'opacity-0'
         }`}
       >
-        <div className="flex flex-col items-center gap-2 text-xs font-mono tracking-wider text-[#A7B1C8]">
+        <div className="flex flex-col items-center gap-2 text-xs font-mono tracking-wider text-[#4B5563]">
           <span>SCROLL TO EXPLORE CASE STUDIES</span>
           <ChevronDown className="w-4 h-4 animate-bounce" />
         </div>

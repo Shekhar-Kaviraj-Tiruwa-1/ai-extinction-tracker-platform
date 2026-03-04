@@ -35,8 +35,8 @@ export function Navigation() {
       <nav
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
           isScrolled
-            ? 'bg-[#0D1B0F]/95 backdrop-blur-md border-b border-white/5'
-            : 'bg-[#0D1B0F]/80 backdrop-blur-sm border-b border-white/5'
+            ? 'bg-white/95 backdrop-blur-md border-b border-gray-200'
+            : 'bg-white/90 backdrop-blur-sm border-b border-gray-200'
         }`}
       >
         <div className="w-full px-6 lg:px-12">
@@ -49,7 +49,7 @@ export function Navigation() {
               <div className="w-8 h-8 rounded-full border-2 border-[#EF4444]/60 flex items-center justify-center group-hover:border-[#EF4444] transition-colors">
                 <Activity className="w-4 h-4 text-[#EF4444]" />
               </div>
-              <span className="font-bold text-base tracking-tight text-[#F9FAFB] hidden sm:block">
+              <span className="font-bold text-base tracking-tight text-[#111827] hidden sm:block">
                 AI Extinction Clock
               </span>
             </Link>
@@ -65,7 +65,7 @@ export function Navigation() {
                     className={`px-3 py-2 rounded-md text-sm font-medium tracking-wide transition-all duration-200 ${
                       isActive
                         ? 'bg-[#EF4444]/15 text-[#EF4444]'
-                        : 'text-[#9CA3AF] hover:text-[#F9FAFB] hover:bg-white/5'
+                        : 'text-[#6B7280] hover:text-[#111827] hover:bg-gray-50'
                     }`}
                   >
                     {item.label}
@@ -77,7 +77,7 @@ export function Navigation() {
             {/* Mobile Menu Button */}
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="lg:hidden p-2 text-[#F9FAFB] hover:text-[#EF4444] transition-colors"
+              className="lg:hidden p-2 text-[#111827] hover:text-[#EF4444] transition-colors"
               aria-label="Toggle menu"
             >
               {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -93,7 +93,7 @@ export function Navigation() {
         }`}
       >
         <div
-          className="absolute inset-0 bg-[#0D1B0F]/98 backdrop-blur-lg"
+          className="absolute inset-0 bg-white/98 backdrop-blur-lg"
           onClick={() => setIsMobileMenuOpen(false)}
         />
         <div
@@ -111,7 +111,7 @@ export function Navigation() {
                   className={`flex items-center px-4 py-3 rounded-lg text-sm font-medium transition-all duration-200 ${
                     isActive
                       ? 'bg-[#EF4444]/20 text-[#EF4444]'
-                      : 'bg-white/5 text-[#9CA3AF] hover:bg-white/10 hover:text-[#F9FAFB]'
+                      : 'bg-gray-50 text-[#6B7280] hover:bg-gray-100 hover:text-[#111827]'
                   }`}
                 >
                   {item.label}
